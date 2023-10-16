@@ -10,7 +10,6 @@ export const ParallaxContainer = styled.div`
   height: 600px; /* Altura deseada para la imagen con parallax */
   overflow: hidden;
   border-radius: 1em;
-
 `;
 
 export const ParallaxImage = styled.img`

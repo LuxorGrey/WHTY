@@ -14,9 +14,7 @@ export const Nav = styled.nav`
   margin-bottom: 40px;
   border-radius: 1em;
   padding: 0 3em;
-  @media (max-width: ${({ theme }) => theme.mobile}) {
-    flex-direction: column;
-  }
+
   &:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Agregar sombra al hacer hover */
     transition: box-shadow 0.3s; /* Agregar transición */

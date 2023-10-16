@@ -19,5 +19,6 @@ export const ContainerWrapCards = styled.div`
   align-items: center;
   overflow: hidden;
   
+  
 `;
 export default Container;

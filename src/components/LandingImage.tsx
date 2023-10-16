@@ -6,7 +6,7 @@ import {
   ParallaxContainer,
   TextOverlay,
 } from "../styled-components/LandingImage.styled";
-import { TextHeader } from "../styled-components/LandingText.styled";
+import { TextHeader, Text } from "../styled-components/LandingText.styled";
 import Parallax from "./Parallax";
 export const ParallaxImageWithText = () => {
   return (
@@ -21,13 +21,15 @@ export const ParallaxImageWithText = () => {
             <TextHeader>
               {"The Voice of Streets".toLocaleUpperCase()}
             </TextHeader>
-            <p>
+            <Text>
               My main goal is to find the most efficient solution to meet the
               presented needs and requirements. Throughout my journey, I have
               developed a problem-solving mindset, allowing me to approach
               challenges with creativity and technical skills
-            </p>
-            <Button>EXCLUSIVE COLLECTION</Button>
+            </Text>
+            <Button bg="#202020" color="white" isAnimated>
+              EXCLUSIVE COLLECTION
+            </Button>
           </div>
         </Flex>
       </TextOverlay>

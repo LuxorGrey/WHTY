@@ -46,3 +46,25 @@ export const scaleOut = keyframes`
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 `;
+export const typing = keyframes`
+  from { width: 0 }
+  to { width: 100% }
+`;
+
+// Define el keyframe para el efecto del cursor de la máquina de escribir
+export const blinkCaret = keyframes`
+  from, to { border-color: transparent }
+  50% { border-color: inherit; }
+`;
+
+export const pulsateFwd = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;

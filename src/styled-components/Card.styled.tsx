@@ -1,10 +1,13 @@
-import { ReactNode } from "react";
+import { ReactNode, MouseEvent } from "react";
 import styled from "styled-components";
+import { blinkCaret, typing } from "./animations/animations";
 
 interface StyledCardProps {
   layout?: string | false;
   children?: ReactNode;
   borderColor?: string;
+  onMouseEnter?: (event: MouseEvent<HTMLDivElement>) => void;
+  onMouseLeave?: (event: MouseEvent<HTMLDivElement>) => void;
 }
 
 export const ContainerCard = styled.div`
@@ -30,12 +33,28 @@ export const ImageCardLogo = styled.img`
 `;
 
 export const TextCardTitle: React.FC<StyledCardProps> = styled.h1`
-  text-align: center; /* Centra el texto horizontalmente */
+  text-align: center;
+  margin-top: 2px;
   color: ${(props) => props?.borderColor};
   text-shadow: 0 0 10px rgba(0, 10, 10, 0.45);
+  /* Aplica el efecto de máquina de escribir */
+  overflow: hidden;
+  border-right: solid ${(props) => props?.borderColor} 0.15em;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: ${typing} 3.5s steps(40, end),
+    ${blinkCaret} 0.75s step-end infinite;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    font-size: 25px;
+  }
 `;
+
 export const TextCard = styled.p`
-  text-align: center; /* Centra el texto horizontalmente */
+  text-align: center;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    font-size: 12px; // Ajusta el tamaño de fuente para dispositivos móviles
+  }
 `;
 
 export const StyledCard: React.FC<StyledCardProps> = styled.div`
@@ -45,9 +64,9 @@ export const StyledCard: React.FC<StyledCardProps> = styled.div`
   background-color: ${({ theme }) => theme.colors.card};
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  margin: 5px 0;
+  margin: 25px 0;
   text-align-last: center;
-  border-bottom: solid ${(props) => props?.borderColor || "red"} 2px;
+  border-bottom: solid ${(props) => props?.borderColor} 2px;
 
   img {
     width: 55%;
@@ -68,8 +87,10 @@ export const StyledCard: React.FC<StyledCardProps> = styled.div`
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     flex-direction: column;
+    font-size: 25px;
   }
 `;
+
 export const ImageCard = styled.img`
   max-width: 35vw;
   &:hover {
