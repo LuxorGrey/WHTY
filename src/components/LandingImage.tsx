@@ -18,7 +18,9 @@ export const ParallaxImageWithText = () => {
             <AvatarContainer>
               <AvatarImage src="src\assets\landingImage.png" alt="Avatar" />
             </AvatarContainer>
-            <TextHeader>{"The Voice of Streets".toLocaleUpperCase()}</TextHeader>
+            <TextHeader>
+              {"The Voice of Streets".toLocaleUpperCase()}
+            </TextHeader>
             <p>
               My main goal is to find the most efficient solution to meet the
               presented needs and requirements. Throughout my journey, I have

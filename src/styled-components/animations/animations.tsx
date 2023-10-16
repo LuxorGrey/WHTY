@@ -46,26 +46,3 @@ export const scaleOut = keyframes`
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 `;
-
-
-export const scaleInText = keyframes`
-  from {
-    transform: scale(1);
-    text-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-  }
-  to {
-    transform: scale(1.05);
-    text-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.4);
-  }
-`;
-
-export const scaleOutText = keyframes`
-  from {
-    transform: scale(1.05);
-    text-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.4);
-  }
-  to {
-    transform: scale(1);
-    text-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-  }
-`;

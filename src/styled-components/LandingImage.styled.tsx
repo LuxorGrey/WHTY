@@ -10,6 +10,7 @@ export const ParallaxContainer = styled.div`
   height: 600px; /* Altura deseada para la imagen con parallax */
   overflow: hidden;
   border-radius: 1em;
+
 `;
 
 export const ParallaxImage = styled.img`
@@ -29,12 +30,6 @@ export const TextOverlay = styled.div`
   text-align: center;
 `;
 
-export const Text = styled.p`
-  font-size: 24px;
-  color: white;
-  padding: 10px 20px;
-`;
-
 export const AvatarContainer = styled.div<Pick<AvatarProps, "size">>`
   width: ${(props) => (props.size ? props.size : "250px")};
   height: ${(props) => (props.size ? props.size : "250px")};
@@ -42,6 +37,7 @@ export const AvatarContainer = styled.div<Pick<AvatarProps, "size">>`
   overflow: hidden;
   animation: ${focusInExpand} 1s ease forwards; // Aplica la animación
   transition: transform 0.3s, filter 0.3s; // Agrega transiciones
+  pointer-events: auto;
   &:hover {
     animation: ${scaleIn} 0.3s forwards; // Aplica la animación de escala y desenfoque en hover
   }

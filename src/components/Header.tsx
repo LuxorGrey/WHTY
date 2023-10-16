@@ -4,7 +4,6 @@ import {
   ContainerWrap,
 } from "../styled-components/Container.styled";
 import { Logo, Nav, StyledHeader } from "../styled-components/Header.styled";
-import ParallaxImageWithText from "./LandingImage";
 import LinkWithIcon from "./LinkWithIcon";
 export default function Header() {
   return (
@@ -32,7 +31,6 @@ export default function Header() {
             />
           </ContainerWrap>
         </Nav>
-        <ParallaxImageWithText />
       </Container>
     </StyledHeader>
   );

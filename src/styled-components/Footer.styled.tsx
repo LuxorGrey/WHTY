@@ -3,14 +3,14 @@ import styled from "styled-components";
 export const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.colors.footer};
   color: #fff;
-  padding: 100px 0 60px;
+  padding: 10px 0 5px;
 
   ul {
     list-style-type: none;
   }
 
   ul li {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
 
   p {

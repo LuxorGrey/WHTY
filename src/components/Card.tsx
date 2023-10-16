@@ -1,4 +1,11 @@
-import { StyledCard, ImageCard } from "../styled-components/Card.styled";
+import {
+  ContainerCard,
+  ImageCard,
+  ImageCardLogo,
+  StyledCard,
+  TextCard,
+  TextCardTitle,
+} from "../styled-components/Card.styled";
 
 export interface CardProps {
   item: {
@@ -6,21 +13,26 @@ export interface CardProps {
     title: string;
     body: string;
     image: string;
+    logo: string;
+    borderColor: string;
   };
 }
 
 export default function Card({ item }: CardProps) {
-  const { id, title, body, image } = item;
+  const { id, title, body, image, logo, borderColor } = item;
+  console.log(id);
   return (
-    <StyledCard layout={id % 2 === 0 && "row-reverse"}>
-      <div>
-        <h2>{title}</h2>
-        <p>{body}</p>
-      </div>
+    <StyledCard
+      layout={id % 2 === 0 && "row-reverse"}
+      borderColor={borderColor}
+    >
+      <ContainerCard>
+        <ImageCardLogo src={logo} />
+        <TextCardTitle borderColor={borderColor}>{title}</TextCardTitle>
+        <TextCard>{body}</TextCard>
+      </ContainerCard>
 
-      <div>
-        <ImageCard src={`src/images/${image}`} alt="" />
-      </div>
+      <ImageCard src={image} alt="" />
     </StyledCard>
   );
 }
