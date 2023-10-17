@@ -3,11 +3,15 @@ import styled from "styled-components";
 import { blinkCaret, typing } from "./animations/animations";
 
 interface StyledCardProps {
-  layout?: string | false;
+  layout?: string ;
   children?: ReactNode;
   borderColor?: string;
   onMouseEnter?: (event: MouseEvent<HTMLDivElement>) => void;
   onMouseLeave?: (event: MouseEvent<HTMLDivElement>) => void;
+}
+interface TextCardProps {
+  children?: ReactNode;
+  borderColor?: string;
 }
 
 export const ContainerCard = styled.div`
@@ -32,7 +36,7 @@ export const ImageCardLogo = styled.div`
   }
 `;
 
-export const TextCardTitle: React.FC<StyledCardProps> = styled.h1`
+export const TextCardTitle: React.FC<TextCardProps> = styled.h1`
   text-align: center;
   margin-top: 2px;
   color: ${(props) => props?.borderColor};

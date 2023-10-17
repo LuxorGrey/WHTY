@@ -30,7 +30,7 @@ export default function Card({ item }: CardProps) {
     <StyledCard
       onMouseEnter={() => setIsHover(true)} // Cuando el ratón entra en el contenedor, establece isHover en true
       onMouseLeave={() => setIsHover(false)} // Cuando el ratón sale del contenedor, establece isHover en false
-      layout={id % 2 === 0 && "row-reverse"}
+      layout={id % 2 === 0 ? "row-reverse" : ""}
       borderColor={borderColor}
     >
       <ContainerCard>

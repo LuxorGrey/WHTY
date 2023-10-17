@@ -25,7 +25,7 @@ export default function Header({ toggleTheme, theme }: HeaderProps) {
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
           >
-            {isHover ? <WLogo /> : <WLogo2 />}
+            {isHover ? <WLogo width={150} /> : <WLogo2 width={150} />}
           </div>
 
           <Switch toggleTheme={toggleTheme} theme={theme} />

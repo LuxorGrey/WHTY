@@ -22,7 +22,9 @@ export const ParallaxImageWithText = ({ theme }: ParallaxProps) => {
       <Parallax speed={-10} scale={[1.2, 1]}>
         <ParallaxImage
           src={
-            theme === "dark" ? "src/assets/image/darkBackground.png" : "src/assets/image/lightBackground.png"
+            theme === "dark"
+              ? "src/assets/image/darkBackground.png"
+              : "src/assets/image/lightBackground.png"
           }
           alt="Imagen de parallax"
         />
@@ -49,7 +51,7 @@ export const ParallaxImageWithText = ({ theme }: ParallaxProps) => {
               developed a problem-solving mindset, allowing me to approach
               challenges with creativity and technical skills
             </Text>
-            <Button isAnimated>EXCLUSIVE COLLECTION</Button>
+            <Button animated={true}>EXCLUSIVE COLLECTION</Button>
           </div>
         </Flex>
       </TextOverlay>

@@ -11,9 +11,9 @@ export default function Footer() {
     <StyledFooter>
       <Container>
         <ContainerWrapCards>
-          <WLogo />
-          <WLogo2 />
-          <AlienStreetLogo />
+          <WLogo width={125} />
+          <WLogo2 width={125} />
+          <AlienStreetLogo width={125} />
         </ContainerWrapCards>
         <SocialIcons />
       </Container>
