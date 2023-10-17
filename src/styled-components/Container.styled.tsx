@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   max-width: 100%;
-  padding: 0 20px;
+  padding: 0 10px;
   margin: 0 auto;
+  overflow: hidden;
 `;
 export const ContainerWrap = styled.div`
   display: flex;
@@ -18,7 +19,5 @@ export const ContainerWrapCards = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  
-  
 `;
 export default Container;

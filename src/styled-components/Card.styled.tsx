@@ -18,7 +18,7 @@ export const ContainerCard = styled.div`
   margin: 0 auto; /* Centra el contenido horizontalmente */
 `;
 
-export const ImageCardLogo = styled.img`
+export const ImageCardLogo = styled.div`
   width: 100%;
   max-width: 800px; /* Ajusta el ancho máximo de la imagen */
   &:hover {
@@ -52,6 +52,7 @@ export const TextCardTitle: React.FC<StyledCardProps> = styled.h1`
 
 export const TextCard = styled.p`
   text-align: center;
+  color: ${({ color, theme }) => color || theme.colors.text};
   @media (max-width: ${({ theme }) => theme.mobile}) {
     font-size: 12px; // Ajusta el tamaño de fuente para dispositivos móviles
   }
@@ -64,7 +65,7 @@ export const StyledCard: React.FC<StyledCardProps> = styled.div`
   background-color: ${({ theme }) => theme.colors.card};
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  margin: 25px 0;
+  margin: 100px 0;
   text-align-last: center;
   border-bottom: solid ${(props) => props?.borderColor} 2px;
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import Button from "../styled-components/Button.styled";
 import {
   ContainerCard,
@@ -15,7 +15,7 @@ export interface CardProps {
     title: string;
     body: string;
     image: string;
-    logo: string;
+    logo: ReactNode;
     borderColor: string;
     buttonText: string;
     hoverImage: string;
@@ -34,18 +34,20 @@ export default function Card({ item }: CardProps) {
       borderColor={borderColor}
     >
       <ContainerCard>
-        <ImageCardLogo src={logo} />
+        <ImageCardLogo>{logo}</ImageCardLogo>
         <TextCardTitle borderColor={borderColor}>{title}</TextCardTitle>
         <TextCard>{body}</TextCard>
       </ContainerCard>
-      <Button borderColor={borderColor} color="white" bg={"#202020"}>
-        {buttonText}
-      </Button>
+      <Button borderColor={borderColor}>{buttonText}</Button>
 
-      <ImageCard src={isHover ? hoverImage ?? image : image} alt=""  style={{
+      <ImageCard
+        src={isHover ? hoverImage ?? image : image}
+        alt=""
+        style={{
           transition: "opacity 0.3s",
           opacity: isHover ? 0.85 : 1, // Cambia la opacidad al hacer hover
-        }} />
+        }}
+      />
     </StyledCard>
   );
 }

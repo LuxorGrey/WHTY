@@ -1,22 +1,44 @@
+import { Parallax } from "react-scroll-parallax";
 import Button from "../styled-components/Button.styled";
 import Flex from "../styled-components/Flex.styled";
 import {
   AvatarContainer,
   AvatarImage,
   ParallaxContainer,
+  ParallaxImage,
+  ParallaxImageDomain,
   TextOverlay,
 } from "../styled-components/LandingImage.styled";
-import { TextHeader, Text } from "../styled-components/LandingText.styled";
-import Parallax from "./Parallax";
-export const ParallaxImageWithText = () => {
+import { Text, TextHeader } from "../styled-components/LandingText.styled";
+interface ParallaxProps {
+  theme: string;
+}
+export const ParallaxImageWithText = ({ theme }: ParallaxProps) => {
   return (
     <ParallaxContainer>
-      <Parallax />
+      <Parallax speed={-20} scale={[0.5, 1]} translateY={["-200px", "0px"]}>
+        <ParallaxImageDomain src="src/assets/image/drop.png" />
+      </Parallax>
+      <Parallax speed={-10} scale={[1.2, 1]}>
+        <ParallaxImage
+          src={
+            theme === "dark" ? "src/assets/image/darkBackground.png" : "src/assets/image/lightBackground.png"
+          }
+          alt="Imagen de parallax"
+        />
+      </Parallax>
       <TextOverlay>
         <Flex>
           <div>
             <AvatarContainer>
-              <AvatarImage src="src\assets\landingImage.png" alt="Avatar" />
+              <AvatarImage
+                src={
+                  theme === "dark"
+                    ? "src/assets/image/darkAvatar.png"
+                    : "src/assets/image/lightAvatar.png"
+                }
+                alt="Avatar"
+              />
             </AvatarContainer>
             <TextHeader>
               {"The Voice of Streets".toLocaleUpperCase()}
@@ -27,9 +49,7 @@ export const ParallaxImageWithText = () => {
               developed a problem-solving mindset, allowing me to approach
               challenges with creativity and technical skills
             </Text>
-            <Button bg="#202020" color="white" isAnimated>
-              EXCLUSIVE COLLECTION
-            </Button>
+            <Button isAnimated>EXCLUSIVE COLLECTION</Button>
           </div>
         </Flex>
       </TextOverlay>

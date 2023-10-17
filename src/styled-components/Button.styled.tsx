@@ -18,15 +18,15 @@ export const Button: React.FC<ButtonProps> = styled.button`
   font-size: 16px;
   font-weight: 700;
   padding: 15px 60px;
-  margin-bottom:  20px;
-  background-color: ${({ bg }) => bg || "#fff"};
-  color: ${({ color }) => color || "#333"};
+  margin-bottom: 20px;
+  background-color: ${({ bg, theme }) => bg || theme.colors.body};
+  color: ${({ color, theme }) => color || theme.colors.text};
   border: solid ${(props) => props?.borderColor} 3px;
-  animation: ${({ isAnimated }) => isAnimated && pulsateFwd} 2s ease-in-out infinite both;
+  animation: ${({ isAnimated }) => isAnimated && pulsateFwd} 2s ease-in-out
+    infinite both;
   &:hover {
     opacity: 0.9;
     transform: scale(0.98);
   }
-  
 `;
 export default Button;

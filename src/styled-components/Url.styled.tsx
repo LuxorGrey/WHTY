@@ -4,7 +4,7 @@ export const StyledLink = styled.a`
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  color: #dddddd;
+  color: ${({ theme }) => theme.colors.icons};
   transition: transform 0.3s, box-shadow 0.3s;
   font-size: 16px;
 

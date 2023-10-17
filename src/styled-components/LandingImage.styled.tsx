@@ -10,6 +10,10 @@ export const ParallaxContainer = styled.div`
   height: 600px; /* Altura deseada para la imagen con parallax */
   overflow: hidden;
   border-radius: 1em;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    height: 1000px;
+    object-fit: cover;
+  }
 `;
 
 export const ParallaxImage = styled.img`
@@ -19,6 +23,21 @@ export const ParallaxImage = styled.img`
   width: 100%;
   height: auto;
   transform: translateY(-20%);
+  opacity: 0.5;
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    object-fit: cover;
+    width: auto;
+  height: 1000px;
+  }
+`;
+export const ParallaxImageDomain = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
 `;
 
 export const TextOverlay = styled.div`
@@ -34,14 +53,14 @@ export const AvatarContainer = styled.div<Pick<AvatarProps, "size">>`
   height: ${(props) => (props.size ? props.size : "250px")};
   border-radius: 50%;
   overflow: hidden;
-  animation: ${focusInExpand} 1s ease forwards; // Aplica la animación
-  transition: transform 0.3s, filter 0.3s; // Agrega transiciones
+  animation: ${focusInExpand} 1s ease forwards;
+  transition: transform 0.3s, filter 0.3s;
   pointer-events: auto;
   &:hover {
-    animation: ${scaleIn} 0.3s forwards; // Aplica la animación de escala y desenfoque en hover
+    animation: ${scaleIn} 0.3s forwards;
   }
   &:not(:hover) {
-    animation: ${scaleOut} 0.3s forwards; // Aplica la animación de escala y desenfoque al salir del hover
+    animation: ${scaleOut} 0.3s forwards;
   }
 `;
 

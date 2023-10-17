@@ -25,11 +25,20 @@ export const Nav = styled.nav`
   }
 `;
 
-export const Logo = styled.img`
+export const LogoSVG = styled.svg<{
+  viewBox: string;
+  y: string;
+  x: string;
+  fill?: string;
+}>`
   max-width: 150px;
   margin-top: auto;
   margin-bottom: auto;
-  
+  fill: ${({ fill, theme }) => fill || theme.colors.icons};
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    max-width: 100px;
+  }
+  /* Puedes agregar estilos adicionales si es necesario */
 `;
 
 export const Image = styled.img`
