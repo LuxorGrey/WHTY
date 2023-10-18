@@ -10,6 +10,11 @@ import {
   TextOverlay,
 } from "../styled-components/LandingImage.styled";
 import { Text, TextHeader } from "../styled-components/LandingText.styled";
+import Drop from "../assets/image/drop.png";
+import DarkBackground from "../assets/image/darkBackground.png";
+import LightBackground from "../assets/image/lightBackground.png";
+import DarkAvatar from "../assets/image/darkAvatar.png";
+import LightAvatar from "../assets/image/lightAvatar.png";
 interface ParallaxProps {
   theme: string;
 }
@@ -17,15 +22,11 @@ export const ParallaxImageWithText = ({ theme }: ParallaxProps) => {
   return (
     <ParallaxContainer>
       <Parallax speed={-20} scale={[0.5, 1]} translateY={["-200px", "0px"]}>
-        <ParallaxImageDomain src="src/assets/image/drop.png" />
+        <ParallaxImageDomain src={Drop} />
       </Parallax>
       <Parallax speed={-10} scale={[1.2, 1]}>
         <ParallaxImage
-          src={
-            theme === "dark"
-              ? "src/assets/image/darkBackground.png"
-              : "src/assets/image/lightBackground.png"
-          }
+          src={theme === "dark" ? DarkBackground : LightBackground}
           alt="Imagen de parallax"
         />
       </Parallax>
@@ -34,11 +35,7 @@ export const ParallaxImageWithText = ({ theme }: ParallaxProps) => {
           <div>
             <AvatarContainer>
               <AvatarImage
-                src={
-                  theme === "dark"
-                    ? "src/assets/image/darkAvatar.png"
-                    : "src/assets/image/lightAvatar.png"
-                }
+                src={theme === "dark" ? DarkAvatar : LightAvatar}
                 alt="Avatar"
               />
             </AvatarContainer>

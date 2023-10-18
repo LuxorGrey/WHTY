@@ -1,19 +1,18 @@
 import { animated, to as interpolate, useSprings } from "@react-spring/web";
 import { useState } from "react";
 import { useDrag } from "react-use-gesture";
-
 import { ContainerWrapCards } from "../styled-components/Container.styled";
 import styles from "../../src/components/css/card3D.module.css";
 // import styles from "../src/components/css/card3D.css";
 
 const cards: string[] = [
-  "src/assets/Cards/card1.png",
-  "src/assets/Cards/card2.png",
-  "src/assets/Cards/card3.png",
-  "src/assets/Cards/card4.png",
-  "src/assets/Cards/card5.png",
-  "src/assets/Cards/card6.png",
-  "src/assets/Cards/card7.png",
+  "./src/assets/Cards/card1.png",
+  "./src/assets/Cards/card2.png",
+  "./src/assets/Cards/card3.png",
+  "./src/assets/Cards/card4.png",
+  "./src/assets/Cards/card5.png",
+  "./src/assets/Cards/card6.png",
+  "./src/assets/Cards/card7.png",
 ];
 
 const cardWidth = 0;
