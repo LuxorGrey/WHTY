@@ -41,7 +41,7 @@ export default function Card({ item }: CardProps) {
       <Button borderColor={borderColor}>{buttonText}</Button>
 
       <ImageCard
-        src={isHover ? hoverImage ?? image : image}
+        src={isHover ? hoverImage : image}
         alt=""
         style={{
           transition: "opacity 0.3s",
