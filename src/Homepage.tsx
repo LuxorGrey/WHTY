@@ -7,6 +7,7 @@ import ParallaxImageWithText from "./components/LandingImage";
 import { StickyImageCard } from "./components/StickyImage";
 import content from "./components/content";
 import Container from "./styled-components/Container.styled";
+import Drop from "./assets/image/drop.png";
 interface ParallaxProps {
   theme: string;
 }
@@ -15,16 +16,14 @@ const Homepage = ({ theme }: ParallaxProps) => {
   return (
     <div>
       <ParallaxProvider>
-        <ParallaxImageWithText
-          theme={theme}
-        />
+        <ParallaxImageWithText theme={theme} />
         <Cards3D />
         <Parallax
           speed={-45}
           scale={[1, 0.8]}
           translateY={["-1500px", "1500px"]}
         >
-          <StickyImageBackground image={"src/assets/image/drop.png"} />
+          <StickyImageBackground image={Drop} />
         </Parallax>
         <Container>
           {content.map((item, index: number) => (
