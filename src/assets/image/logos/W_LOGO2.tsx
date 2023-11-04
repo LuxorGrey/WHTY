@@ -1,4 +1,4 @@
-import { LogoSVG } from "../styled-components/Header.styled";
+import { LogoSVG } from "../../../styled-components/Header.styled";
 
 export function WLogo2({ width }: { width: number }){
   return (

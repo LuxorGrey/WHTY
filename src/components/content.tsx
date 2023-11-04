@@ -1,6 +1,6 @@
-import { AlienStreetLogo } from "../assets/AlienStreetLogo";
-import { WLogo } from "../assets/W_LOGO";
-import { WLogo2 } from "../assets/W_LOGO2";
+import { AlienStreetLogo } from "../assets/image/logos/AlienStreetLogo";
+import { WLogo } from "../assets/image/logos/W_LOGO";
+import { WLogo2 } from "../assets/image/logos/W_LOGO2";
 import Image1 from "../assets/image/cardMinimal1.png";
 import ImageHover1 from "../assets/image/cardMinimalHover1.png";
 import ImageParallax1 from "../assets/image/orb1.png";

@@ -28,7 +28,7 @@ export const ParallaxImage = styled.img`
   @media (max-width: ${({ theme }) => theme.mobile}) {
     object-fit: cover;
     width: auto;
-  height: 1000px;
+    height: 1000px;
   }
 `;
 export const ParallaxImageDomain = styled.img`

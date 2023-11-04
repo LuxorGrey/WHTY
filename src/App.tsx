@@ -1,38 +1,13 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import Homepage from "./Homepage";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import { CartProvider } from "./context/cart";
+import Homepage from "./pages/Homepage";
+import { ProductsPage } from "./pages/ProductsPage";
 import GlobalStyles from "./styled-components/Global";
-
-const darkTheme = {
-  colors: {
-    header: "#1b1b1b",
-    topHeader: "#131313",
-    body: "#131313",
-    footer: "#252525",
-    card: "#2020203b",
-    buttons: "#202020",
-    text: "#eeeeee",
-    icons: "#cacaca",
-  },
-  mobile: "768px",
-};
-
-const lightTheme = {
-  colors: {
-    header: "#f0f0f0",
-    topHeader: "#dfdfdf",
-    body: "#e6e6e6",
-    footer: "#eeeeee",
-    card: "#aaaaaa3a",
-    buttons: "#363636",
-    text: "#1f1f1f",
-    icons: "#2c2c2c",
-  },
-  mobile: "768px",
-};
+import { darkTheme, lightTheme } from "./styles";
 
 export const App = () => {
   const [currentTheme, setCurrentTheme] = useState(darkTheme);
@@ -42,7 +17,7 @@ export const App = () => {
 
   return (
     <ThemeProvider theme={currentTheme}>
-      <>
+      <CartProvider>
         <GlobalStyles />
         <Header
           toggleTheme={toggleTheme}
@@ -58,10 +33,11 @@ export const App = () => {
                 />
               }
             />
+            <Route path="/products" element={<ProductsPage />} />
           </Routes>
         </BrowserRouter>
         <Footer />
-      </>
+      </CartProvider>
     </ThemeProvider>
   );
 };

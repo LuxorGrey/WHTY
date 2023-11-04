@@ -31,8 +31,8 @@ export const ImageCardLogo = styled.div`
   }
 
   &:not(:hover) {
-    transform: scale(0.9); /* Realizar la animación de escala */
-    transition: transform 0.9s; /* Agregar transición */
+    transform: scale(0.9); 
+    transition: transform 0.9s; 
   }
 `;
 
@@ -41,7 +41,6 @@ export const TextCardTitle: React.FC<TextCardProps> = styled.h1`
   margin-top: 2px;
   color: ${(props) => props?.borderColor};
   text-shadow: 0 0 10px rgba(0, 10, 10, 0.45);
-  /* Aplica el efecto de máquina de escribir */
   overflow: hidden;
   border-right: solid ${(props) => props?.borderColor} 0.15em;
   white-space: nowrap;
