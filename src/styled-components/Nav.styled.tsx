@@ -21,7 +21,19 @@ export const NavLink = styled.a`
   transition: color 0.3s;
   font-size: 0.9rem;
   &:hover {
-    color:${({ theme }) => theme.colors.icons};
+    color: ${({ theme }) => theme.colors.icons};
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  animation: ${trackingInExpand} 1s ease forwards;
+`;
+export const NavLinkLocal = styled.div`
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.text};
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 0.9rem;
+  &:hover {
+    color: ${({ theme }) => theme.colors.icons};
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
   animation: ${trackingInExpand} 1s ease forwards;

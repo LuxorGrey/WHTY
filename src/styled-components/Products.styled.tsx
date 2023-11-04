@@ -47,10 +47,12 @@ export const ProductItem = styled.li`
 export const ProductTitle = styled.h3`
   text-align-last: center;
   margin: 0;
+  color: ${({ theme }) => theme.colors.text};
 `;
 export const ProductTitleCart = styled.h3`
   margin: 0;
   font-size: 0.75rem;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 export const ProductCategory = styled.h3`
@@ -63,11 +65,13 @@ export const ProductCategory = styled.h3`
 export const ProductSubtitle = styled.h3`
   margin: 0;
   font-size: 0.65rem;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 export const ProductSpan = styled.span`
   font-size: 1rem;
   opacity: 0.9;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 export const ProductImage = styled.img`

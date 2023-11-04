@@ -11,16 +11,7 @@ import Card7 from "../../src/assets/image/Cards/card7.png";
 import { ContainerWrapCards } from "../styled-components/Container.styled";
 import styles from "./css/card3D.module.css";
 
-
-const cards: string[] = [
-  Card1,
-  Card2,
-  Card3,
-  Card4,
-  Card5,
-  Card6,
-  Card7,
-];
+const cards: string[] = [Card1, Card2, Card3, Card4, Card5, Card6, Card7];
 
 const cardWidth = 0;
 const cardSpacing = 0;
@@ -107,6 +98,7 @@ function Deck() {
           <animated.div
             {...bind(i)}
             style={{
+              cursor: "pointer",
               transform: interpolate([rot, scale], trans),
               backgroundImage: `url(${cards[i]})`,
             }}

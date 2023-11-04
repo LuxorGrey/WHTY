@@ -9,6 +9,7 @@ import {
 import { Nav, StyledHeader } from "../styled-components/Header.styled";
 import {
   NavLink,
+  NavLinkLocal,
   NavList,
   SeparatorVertical,
 } from "../styled-components/Nav.styled";
@@ -17,6 +18,7 @@ import LinkWithIcon from "./LinkWithIcon";
 import Switch from "./Switcher/Switch";
 import { useCart } from "../hooks/useCart";
 import { CartIconNumber } from "../styled-components/Cart.styled";
+import { useNavigate } from "react-router-dom";
 interface HeaderProps {
   toggleTheme: () => void;
   theme: string;
@@ -25,7 +27,8 @@ interface HeaderProps {
 export default function Header({ toggleTheme, theme }: HeaderProps) {
   const [isHover, setIsHover] = useState(false);
   const { cart } = useCart();
-  console.log(cart);
+  const navigate = useNavigate();
+
   return (
     <StyledHeader>
       <Container>
@@ -40,9 +43,13 @@ export default function Header({ toggleTheme, theme }: HeaderProps) {
 
           <div style={{ width: "100%", height: "auto" }}>
             <NavList>
-              <NavLink href="/">HOME</NavLink>
+              <NavLinkLocal onClick={() => navigate("/")}>HOME</NavLinkLocal>
               <SeparatorVertical />
-              <NavLink href="/products">PRODUCTS</NavLink>
+              <NavLinkLocal onClick={() => navigate("/products")}>
+                PRODUCTS
+              </NavLinkLocal>
+              <SeparatorVertical />
+              <NavLinkLocal onClick={() => navigate("/bio")}>BIO</NavLinkLocal>
               <SeparatorVertical />
               <NavLink href="https://www.whaitystudios.com/">SHOP</NavLink>
             </NavList>

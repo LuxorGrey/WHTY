@@ -9,6 +9,7 @@ export const CartFooterContainer = styled.div`
 `;
 
 export const ButtonCart = styled.button`
+  padding: 10px;
   display: flex;
   align-items: center;
   color: ${({ theme }) => theme.colors.text};

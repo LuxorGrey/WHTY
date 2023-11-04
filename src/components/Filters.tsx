@@ -34,8 +34,7 @@ export function Filters() {
     }));
   };
 
-  const handleChangeOrder = (event: ChangeEvent<HTMLSelectElement>  ) => {
-    console.log(event.target.value);
+  const handleChangeOrder = (event: ChangeEvent<HTMLSelectElement>) => {
     setFilters((prevState: Filters) => ({
       ...prevState,
       order: event.target.value,
@@ -58,7 +57,7 @@ export function Filters() {
       </FilterSection>
 
       <FilterSection>
-        <FilterLabel htmlFor={orderFilterId}>Ordenar</FilterLabel>
+        <FilterLabel htmlFor={orderFilterId}>Order by</FilterLabel>
         <FilterSelect id={orderFilterId} onChange={handleChangeOrder}>
           <option value="price">Price</option>
           <option value="rating">Rating</option>
@@ -66,7 +65,7 @@ export function Filters() {
         </FilterSelect>
       </FilterSection>
       <FilterSection>
-        <FilterLabel htmlFor={categoryFilterId}>Categoría</FilterLabel>
+        <FilterLabel htmlFor={categoryFilterId}>Category</FilterLabel>
         <FilterSelect id={categoryFilterId} onChange={handleChangeCategory}>
           <option value="all">Todas</option>
           <option value="artwork">Artwork</option>
