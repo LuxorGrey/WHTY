@@ -7,7 +7,7 @@ import ImageParallax1 from "../assets/gifs/hearth.gif";
 
 import Image2 from "../assets/image/cardMinimal2.png";
 import ImageHover2 from "../assets/image/cardMinimalHover2.png";
-import ImageParallax2 from "../assets/gifs/gifSphere2.gif";
+import ImageParallax2 from "../assets/gifs/gifSphere6.gif";
 
 import Image3 from "../assets/image/cardMinimal3.png";
 import ImageHover3 from "../assets/image/cardMinimalHover3.png";

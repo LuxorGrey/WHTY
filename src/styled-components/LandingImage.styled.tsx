@@ -16,6 +16,17 @@ export const ParallaxContainer = styled.div`
   }
 `;
 
+export const BackgroundContainer = styled.div`
+  position: relative;
+  height: auto; /* Altura deseada para la imagen con parallax */
+  overflow: hidden;
+  border-radius: 1em;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    height: 1000px;
+    object-fit: cover;
+  }
+`;
+
 export const ParallaxImage = styled.img`
   position: absolute;
   top: 0;

@@ -11,7 +11,7 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
   border-radius: 1em;
   padding: 0 3em;
 

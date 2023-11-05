@@ -2,9 +2,20 @@ import { Parallax } from "react-scroll-parallax";
 import Container from "../styled-components/Container.styled";
 import Card from "./Card";
 import { StickyImageCard } from "./StickyImage";
-import content from "./content";
 
-const ContainerImagesHome = () => {
+interface Content {
+  id: number;
+  title: string;
+  body: string;
+  image: string; // Ruta de la imagen
+  hoverImage: string; // Ruta de la imagen en hover
+  parallaxImage: string; // Ruta de la imagen para parallax
+  logo: React.ReactNode; // Componente de logo
+  borderColor: string; // Color del borde
+  buttonText: string;
+}
+
+const ContainerImagesHome = ({ content }: { content: Content[] }) => {
   return (
     <Container>
       {content.map((item, index: number) => (

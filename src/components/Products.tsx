@@ -44,9 +44,11 @@ export function Products({ products }: { products: Product[] }) {
                 }}
               >
                 {isProductInCart ? <FaTrash /> : <FaShoppingCart />}
+
                 <ProductSubtitle>
                   {product.rating} <FaStar />
                 </ProductSubtitle>
+
                 <ProductSubtitle>(Stock: {product.stock})</ProductSubtitle>
               </IconsContainer>
             </ProductItem>

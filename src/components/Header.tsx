@@ -34,7 +34,7 @@ export default function Header({ toggleTheme, theme }: HeaderProps) {
       <Container>
         <Nav>
           <div
-            style={{ width: "90%", height: "auto" }}
+            style={{ width: "75%", height: "auto" }}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
           >

@@ -20,7 +20,7 @@ export const darkTheme = {
       body: "#e6e6e6",
       footer: "#eeeeee",
       cart: "#f7f7f7f9",
-      card: "#ececec",
+      card: "#ececec50",
       buttons: "#363636",
       text: "#252525",
       icons: "#494949",
