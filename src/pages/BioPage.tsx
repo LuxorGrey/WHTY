@@ -2,6 +2,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import ContainerImagesHome from "../components/ContainerImagesHome";
 import contentBio from "../mock/contentBio.tsx";
 import bioAvatar from "../assets/image/bioAvatar.png";
+import darkBackground from "../assets/image/darkBackground.png";
 import bioBackground from "../assets/image/bioBackground.png";
 import {
   Content,
@@ -19,10 +20,11 @@ const BioPage = () => {
   return (
     <div>
       <ParallaxProvider>
-      <BioBackground/>
+        <BioBackground />
         <BackgroundContainer>
           <HeaderContainer>
             <StyledCardBio>
+              <HeaderBackground src={darkBackground} />
               <ProfileImage src={bioAvatar} alt="Imagen de perfil" />
               <Content>
                 <Title>WHAITY STUDIOS™</Title>

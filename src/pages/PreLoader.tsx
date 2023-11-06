@@ -1,9 +1,10 @@
 import gsap from "gsap";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import ImageParallax1 from "../assets/gifs/gifSphere7.gif";
+import ImageParallax2 from "../assets/gifs/gifSphere4.gif";
 import { WLogo2 } from "../assets/image/logos/W_LOGO2";
-import preLoaderBackground from "../assets/image/preLoaderBackground1.png";
 import preLoaderBackground1 from "../assets/image/preLoaderBackground.png";
+import preLoaderBackground from "../assets/image/preLoaderBackground1.png";
 import { StickyImageCardCenter } from "../components/StickyImage";
 import { HeaderBackground } from "../styled-components/Bio.styled";
 import {
@@ -36,14 +37,14 @@ export default function PreLoader({ theme }: PreLoaderProps) {
           ease: "Power3.easeOut",
         })
         .to(".texts-container span", {
-          duration: 1,
+          duration: 2,
           y: 70,
           skewY: -20,
           stagger: 0.2,
           ease: "Power3.easeOut",
         })
         .to("body", {
-          duration: 0.01,
+          duration: 0.5,
           css: { overflowY: "scroll" },
           ease: "power3.inOut",
         })
@@ -82,14 +83,17 @@ export default function PreLoader({ theme }: PreLoaderProps) {
     };
 
     preLoaderAnim();
-  }, []); // Empty dependency array to run the animation only on mount
+  }, []);
 
   return (
     <PreLoaderContainer className="preloader gap-[5px] overflow-hidden text-[14px] sm:gap-[10px] sm:text-[16px] md:text-[18px] lg:text-[20px]">
       <HeaderBackground
         src={theme === "dark" ? preLoaderBackground : preLoaderBackground1}
       />
-      <StickyImageCardCenter image={ImageParallax1} />
+      <StickyImageCardCenter
+        image={theme === "dark" ? ImageParallax1 : ImageParallax2}
+      />
+
       <PreLoaderContainerLogo>
         <WLogo2 width={400} />
       </PreLoaderContainerLogo>

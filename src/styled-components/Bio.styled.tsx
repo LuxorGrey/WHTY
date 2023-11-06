@@ -27,6 +27,18 @@ export const HeaderBackground = styled.img`
   height: auto;
   opacity: 0.2;
   filter: blur(5px);
+  left: 0;
+`;
+export const VideoBackground = styled.video`
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  opacity: 0.2;
+  filter: blur(5px);
+  left: 0;
 `;
 
 export const ProfileImage = styled.img`
