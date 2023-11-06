@@ -71,6 +71,7 @@ export const StyledCard: React.FC<StyledCardProps> = styled.div`
   margin: 100px 0;
   text-align-last: center;
   border-bottom: solid ${(props) => props?.borderColor} 2px;
+  margin-bottom:1em;
 
   img {
     width: 55%;

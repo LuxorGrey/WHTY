@@ -9,6 +9,7 @@ import { ProductsPage } from "./pages/ProductsPage";
 import GlobalStyles from "./styled-components/Global";
 import { darkTheme, lightTheme } from "./styles";
 import BioPage from "./pages/BioPage";
+import PreLoader from "./pages/PreLoader";
 
 export const App = () => {
   const [currentTheme, setCurrentTheme] = useState(darkTheme);
@@ -19,6 +20,7 @@ export const App = () => {
   const AppLayout = ({ children }: { children: ReactNode }) => {
     return (
       <div>
+        <PreLoader theme={currentTheme === lightTheme ? "light" : "dark"} />
         <Header
           toggleTheme={toggleTheme}
           theme={currentTheme === lightTheme ? "light" : "dark"}

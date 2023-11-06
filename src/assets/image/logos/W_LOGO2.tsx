@@ -1,6 +1,6 @@
 import { LogoSVG } from "../../../styled-components/Header.styled";
 
-export function WLogo2({ width }: { width: number }){
+export function WLogo2({ width }: { width: number }) {
   return (
     <LogoSVG x="0px" y="0px" viewBox="0 0 595.3 344" width={width}>
       <g>

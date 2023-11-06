@@ -101,6 +101,7 @@ function Deck() {
               cursor: "pointer",
               transform: interpolate([rot, scale], trans),
               backgroundImage: `url(${cards[i]})`,
+              backgroundSize:"cover"
             }}
           />
         </animated.div>

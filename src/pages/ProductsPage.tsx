@@ -12,8 +12,8 @@ export function ProductsPage() {
   return (
     <ParallaxProvider>
       <BackgroundContainer>
-        <HeaderBackground src={productBackground} />
         <Filters />
+        <HeaderBackground src={productBackground} />
         <Products products={filteredProducts} />
       </BackgroundContainer>
     </ParallaxProvider>

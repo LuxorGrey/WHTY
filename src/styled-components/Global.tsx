@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.colors.body};
     color: ${({ theme }) => theme.colors.text};
-    font-family: 'Poppins', sans-serif;
+    font-family:  Montserrat,Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
     font-size: 1.15em;
     margin: 0;
   }

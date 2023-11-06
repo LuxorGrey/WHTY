@@ -1,5 +1,7 @@
+import { ImagePreLoader } from "../styled-components/PreLoader.styled";
 import {
-  FixedImage,
+  FixedImageCenter,
+  FixedImageLeft,
   FixedImageRight,
   Image,
   ImageCard,
@@ -7,27 +9,35 @@ import {
 
 export const StickyImage = ({ image }: { image: string }) => {
   return (
-    <FixedImage>
+    <FixedImageLeft>
       <Image src={image} alt="Gotas de agua" />
-    </FixedImage>
+    </FixedImageLeft>
   );
 };
 
 export const StickyImageCard = ({
   image,
-  index,
+  index = 1,
 }: {
   image: string;
   index: number;
 }) => {
   return index % 2 === 0 ? (
-    <FixedImage>
+    <FixedImageLeft>
       <ImageCard src={image} alt="Gotas de agua" />
-    </FixedImage>
+    </FixedImageLeft>
   ) : (
     <FixedImageRight>
       <ImageCard src={image} alt="Gotas de agua" />
     </FixedImageRight>
+  );
+};
+
+export const StickyImageCardCenter = ({ image }: { image: string }) => {
+  return (
+    <FixedImageCenter>
+      <ImagePreLoader src={image} alt="Gotas de agua" />
+    </FixedImageCenter>
   );
 };
 

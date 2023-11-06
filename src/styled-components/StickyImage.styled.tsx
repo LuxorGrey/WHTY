@@ -1,12 +1,26 @@
 import styled from "styled-components";
 
-export const FixedImage = styled.div`
+export const FixedImageCenter = styled.div`
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra vertical y horizontalmente */
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`;
+
+export const FixedImageLeft = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100; 
+  z-index: 100;
   pointer-events: none;
 `;
+
 export const FixedImageRight = styled.div`
   position: absolute;
   top: 0;
@@ -17,7 +31,6 @@ export const FixedImageRight = styled.div`
 
 export const Image = styled.img`
   width: 100%;
-
   filter: blur(2px);
   mask: linear-gradient(to bottom, transparent 0%, transparent 30%, black 100%);
   -webkit-mask: linear-gradient(
@@ -27,6 +40,7 @@ export const Image = styled.img`
     black 100%
   );
 `;
+
 export const ImageCard = styled.img`
   width: 100%;
   filter: blur(2px);
@@ -40,7 +54,7 @@ export const ImageCard = styled.img`
 `;
 export const ImageSad = styled.img`
   width: 100%;
-  filter: blur(2px); 
+  filter: blur(2px);
 `;
 export const BackgroundImage = styled.img`
   width: 100%;

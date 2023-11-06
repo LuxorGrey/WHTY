@@ -13,11 +13,13 @@ import {
   Title,
 } from "../styled-components/Bio.styled.tsx";
 import { BackgroundContainer } from "../styled-components/LandingImage.styled.tsx";
+import BioBackground from "../components/BioBackground.tsx";
 
 const BioPage = () => {
   return (
     <div>
       <ParallaxProvider>
+      <BioBackground/>
         <BackgroundContainer>
           <HeaderContainer>
             <StyledCardBio>
