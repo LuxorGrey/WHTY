@@ -1,4 +1,9 @@
 import { Parallax } from "react-scroll-parallax";
+import DarkAvatar from "../assets/image/darkAvatar.png";
+import LightAvatar from "../assets/image/lightAvatar.png";
+import DarkBackground from "../assets/image/darkBackground.png";
+import Drop from "../assets/image/drop.png";
+import LightBackground from "../assets/image/lightBackground.png";
 import Button from "../styled-components/Button.styled";
 import Flex from "../styled-components/Flex.styled";
 import {
@@ -10,15 +15,11 @@ import {
   TextOverlay,
 } from "../styled-components/LandingImage.styled";
 import { Text, TextHeader } from "../styled-components/LandingText.styled";
-import Drop from "../assets/image/drop.png";
-import DarkBackground from "../assets/image/darkBackground.png";
-import LightBackground from "../assets/image/lightBackground.png";
-import DarkAvatar from "../assets/image/darkAvatar.png";
-import LightAvatar from "../assets/image/lightAvatar.png";
-interface ParallaxProps {
-  theme: string;
-}
-export const ParallaxImageWithText = ({ theme }: ParallaxProps) => {
+import { IsDarkProps } from "./types/isDarkType";
+import { useNavigate } from "react-router-dom";
+
+export const ParallaxImageWithText = ({ isDark }: IsDarkProps) => {
+  const navigate = useNavigate();
   return (
     <ParallaxContainer>
       <Parallax speed={-20} scale={[0.5, 1]} translateY={["-200px", "0px"]}>
@@ -26,7 +27,7 @@ export const ParallaxImageWithText = ({ theme }: ParallaxProps) => {
       </Parallax>
       <Parallax speed={-10} scale={[1.2, 1]}>
         <ParallaxImage
-          src={theme === "dark" ? DarkBackground : LightBackground}
+          src={isDark ? DarkBackground : LightBackground}
           alt="Imagen de parallax"
         />
       </Parallax>
@@ -35,7 +36,7 @@ export const ParallaxImageWithText = ({ theme }: ParallaxProps) => {
           <div>
             <AvatarContainer>
               <AvatarImage
-                src={theme === "dark" ? DarkAvatar : LightAvatar}
+                src={isDark ? DarkAvatar : LightAvatar}
                 alt="Avatar"
               />
             </AvatarContainer>
@@ -48,7 +49,12 @@ export const ParallaxImageWithText = ({ theme }: ParallaxProps) => {
               developed a problem-solving mindset, allowing me to approach
               challenges with creativity and technical skills
             </Text>
-            <Button animated={true}>EXCLUSIVE COLLECTION</Button>
+            <Button
+              onClick={() => navigate("products")}
+              animated={true}
+            >
+              EXCLUSIVE COLLECTION
+            </Button>
           </div>
         </Flex>
       </TextOverlay>

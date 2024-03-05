@@ -1,14 +1,16 @@
 import { useState } from "react";
-import { FaShopify, FaWhatsapp } from "react-icons/fa";
+import { FaShopify } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { WLogo } from "../assets/image/logos/W_LOGO";
 import { WLogo2 } from "../assets/image/logos/W_LOGO2";
+import { useCart } from "../hooks/useCart";
+import { CartIconNumber } from "../styled-components/Cart.styled";
 import {
   Container,
   ContainerWrap,
 } from "../styled-components/Container.styled";
 import { Nav, StyledHeader } from "../styled-components/Header.styled";
 import {
-  NavLink,
   NavLinkLocal,
   NavList,
   SeparatorVertical,
@@ -16,15 +18,12 @@ import {
 import Cart from "./Cart";
 import LinkWithIcon from "./LinkWithIcon";
 import Switch from "./Switcher/Switch";
-import { useCart } from "../hooks/useCart";
-import { CartIconNumber } from "../styled-components/Cart.styled";
-import { useNavigate } from "react-router-dom";
 interface HeaderProps {
   toggleTheme: () => void;
-  theme: string;
+  isDark: boolean;
 }
 
-export default function Header({ toggleTheme, theme }: HeaderProps) {
+export default function Header({ toggleTheme, isDark }: HeaderProps) {
   const [isHover, setIsHover] = useState(false);
   const { cart } = useCart();
   const navigate = useNavigate();
@@ -45,25 +44,23 @@ export default function Header({ toggleTheme, theme }: HeaderProps) {
             <NavList>
               <NavLinkLocal onClick={() => navigate("/")}>HOME</NavLinkLocal>
               <SeparatorVertical />
+              <NavLinkLocal onClick={() => navigate("/gallery")}>
+                GALLERY
+              </NavLinkLocal>
+              <SeparatorVertical />
               <NavLinkLocal onClick={() => navigate("/products")}>
                 PRODUCTS
               </NavLinkLocal>
               <SeparatorVertical />
               <NavLinkLocal onClick={() => navigate("/bio")}>BIO</NavLinkLocal>
-              <SeparatorVertical />
-              <NavLink href="https://www.whaitystudios.com/">SHOP</NavLink>
             </NavList>
           </div>
 
-          <Switch toggleTheme={toggleTheme} theme={theme} />
+          <Switch toggleTheme={toggleTheme} isDark={isDark} />
           <ContainerWrap>
             <LinkWithIcon
               to="https://www.whaitystudios.com/"
               icon={<FaShopify />}
-            />
-            <LinkWithIcon
-              to="https://www.tercerejemplo.com"
-              icon={<FaWhatsapp />}
             />
             <Cart /> <CartIconNumber>({cart.length})</CartIconNumber>
           </ContainerWrap>

@@ -6,18 +6,16 @@ import { WLogo2 } from "../assets/image/logos/W_LOGO2";
 import preLoaderBackground1 from "../assets/image/preLoaderBackground.png";
 import preLoaderBackground from "../assets/image/preLoaderBackground1.png";
 import { StickyImageCardCenter } from "../components/StickyImage";
-import { HeaderBackground } from "../styled-components/Bio.styled";
+import { HeaderBackground } from "../styled-components/Gallery.styled";
 import {
   PreLoaderContainer,
   PreLoaderContainerLogo,
   PreLoaderContainerText,
   TextPreLoader,
 } from "../styled-components/PreLoader.styled";
+import { IsDarkProps } from "../components/types/isDarkType";
 
-interface PreLoaderProps {
-  theme: string;
-}
-export default function PreLoader({ theme }: PreLoaderProps) {
+export default function PreLoader({ isDark }: IsDarkProps) {
   useEffect(() => {
     const tl = gsap.timeline();
 
@@ -29,7 +27,7 @@ export default function PreLoader({ theme }: PreLoaderProps) {
         ease: "Power3.easeOut",
       })
         .from(".texts-container span", {
-          duration: 1.5,
+          duration: 1.75,
           delay: 1,
           y: 70,
           skewY: 10,
@@ -37,19 +35,19 @@ export default function PreLoader({ theme }: PreLoaderProps) {
           ease: "Power3.easeOut",
         })
         .to(".texts-container span", {
-          duration: 2,
+          duration: 1,
           y: 70,
           skewY: -20,
           stagger: 0.2,
           ease: "Power3.easeOut",
         })
         .to("body", {
-          duration: 0.5,
+          duration: 0.25,
           css: { overflowY: "scroll" },
           ease: "power3.inOut",
         })
         .from(".sub", {
-          duration: 1,
+          duration: 0.5,
           opacity: 0,
           y: 80,
           ease: "expo.easeOut",
@@ -57,7 +55,7 @@ export default function PreLoader({ theme }: PreLoaderProps) {
         .to(
           ".preloader",
           {
-            duration: 1.5,
+            duration: 1,
             height: "0vh",
             ease: "Power3.easeOut",
             onComplete: mobileLanding,
@@ -88,11 +86,9 @@ export default function PreLoader({ theme }: PreLoaderProps) {
   return (
     <PreLoaderContainer className="preloader gap-[5px] overflow-hidden text-[14px] sm:gap-[10px] sm:text-[16px] md:text-[18px] lg:text-[20px]">
       <HeaderBackground
-        src={theme === "dark" ? preLoaderBackground : preLoaderBackground1}
+        src={isDark ? preLoaderBackground : preLoaderBackground1}
       />
-      <StickyImageCardCenter
-        image={theme === "dark" ? ImageParallax1 : ImageParallax2}
-      />
+      <StickyImageCardCenter image={isDark ? ImageParallax1 : ImageParallax2} />
 
       <PreLoaderContainerLogo>
         <WLogo2 width={400} />

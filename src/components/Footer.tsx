@@ -13,7 +13,7 @@ export default function Footer() {
         <ContainerWrapCards>
           <WLogo width={125} />
           <WLogo2 width={125} />
-          <AlienStreetLogo width={125} />
+          <AlienStreetLogo width={80} />
         </ContainerWrapCards>
         <SocialIcons />
       </Container>

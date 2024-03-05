@@ -1,8 +1,14 @@
 import { LogoSVG } from "../../../styled-components/Header.styled";
 
-export function WLogo2({ width }: { width: number }) {
+export function WLogo2({ width, margin }: { width: number; margin?: number }) {
   return (
-    <LogoSVG x="0px" y="0px" viewBox="0 0 595.3 344" width={width}>
+    <LogoSVG
+      x="0px"
+      y="0px"
+      viewBox="0 0 595.3 344"
+      width={width}
+      style={{ margin: margin ?? "inherit" }}
+    >
       <g>
         <g>
           <path d="M192.7,126.3l-28.6,80.9h-21.8L125.7,152l-16.5,55.2H87.3l-28.6-80.9h19.8l20.1,61.3l18.4-61.3h17.6l18.4,61.3l20-61.3    H192.7z" />

@@ -6,6 +6,7 @@ interface ButtonProps {
   bg?: string;
   borderColor?: string;
   color?: string;
+  onClick?: () => void;
   children?: ReactNode;
   animated?: boolean;
 }
@@ -22,8 +23,8 @@ export const Button: React.FC<ButtonProps> = styled.button`
   background-color: ${({ bg, theme }) => bg || theme.colors.body};
   color: ${({ color, theme }) => color || theme.colors.text};
   border: solid ${(props) => props?.borderColor} 3px;
-  animation: ${({ animated }) => animated && pulsateFwd} 2s ease-in-out
-    infinite both;
+  animation: ${({ animated }) => animated && pulsateFwd} 2s ease-in-out infinite
+    both;
   &:hover {
     opacity: 0.9;
     transform: scale(0.98);

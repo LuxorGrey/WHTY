@@ -6,15 +6,13 @@ import Cards3D from "../components/Cards3D";
 import ContainerImagesHome from "../components/ContainerImagesHome";
 import ParallaxImageWithText from "../components/LandingImage";
 import contentHome from "../mock/contentHome.tsx";
-import { HeaderBackground } from "../styled-components/Bio.styled.tsx";
-interface ParallaxProps {
-  theme: string;
-}
-const Homepage = ({ theme }: ParallaxProps) => {
+import { HeaderBackground } from "../styled-components/Gallery.styled.tsx";
+import { IsDarkProps } from "../components/types/isDarkType.ts";
+
+const Homepage = ({ isDark }: IsDarkProps) => {
   return (
     <ParallaxProvider>
-      {/* <VideoPlayer /> */}
-      <ParallaxImageWithText theme={theme} />
+      <ParallaxImageWithText isDark={isDark} />
       <HeaderBackground src={homeBackground} />
       <Cards3D />
       <StickyImageBackground src={Drop} />

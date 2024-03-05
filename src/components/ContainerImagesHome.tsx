@@ -22,15 +22,15 @@ const ContainerImagesHome = ({ content }: { content: Content[] }) => {
         <div key={index}>
           <Parallax
             speed={-5}
-            translateX={index % 2 === 0 ? ["200px", "150px"] : ["0px", "25px"]}
-            scale={[0.75, 1.2]}
+            translateX={index % 2 === 0 ? ["0px", "25px"] : ["0px", "25px"]}
+            scale={[0.8, 1]}
           >
             <StickyImageCard image={item.parallaxImage} index={index} />
           </Parallax>
           <Parallax
             speed={-10}
             translateX={index % 2 === 0 ? ["25px", "0px"] : ["-25px", "0px"]}
-            scale={[0.75, 1.2]}
+            scale={[0.8, 1]}
           >
             <Card item={item} />
           </Parallax>

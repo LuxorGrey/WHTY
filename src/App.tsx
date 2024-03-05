@@ -10,9 +10,12 @@ import GlobalStyles from "./styled-components/Global";
 import { darkTheme, lightTheme } from "./styles";
 import BioPage from "./pages/BioPage";
 import PreLoader from "./pages/PreLoader";
+import isDarkUtils from "./components/utils/isDarkUtils";
+import GalleryPage from "./pages/GalleryPage";
 
 export const App = () => {
   const [currentTheme, setCurrentTheme] = useState(darkTheme);
+  const isDark = isDarkUtils(currentTheme);
   const toggleTheme = () => {
     setCurrentTheme(currentTheme === lightTheme ? darkTheme : lightTheme);
   };
@@ -20,11 +23,8 @@ export const App = () => {
   const AppLayout = ({ children }: { children: ReactNode }) => {
     return (
       <div>
-        <PreLoader theme={currentTheme === lightTheme ? "light" : "dark"} />
-        <Header
-          toggleTheme={toggleTheme}
-          theme={currentTheme === lightTheme ? "light" : "dark"}
-        />
+        <PreLoader isDark={isDark} />
+        <Header toggleTheme={toggleTheme} isDark={isDark} />
         {children}
         <Footer />
       </div>
@@ -36,41 +36,17 @@ export const App = () => {
       <CartProvider>
         <GlobalStyles />
         <BrowserRouter>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <AppLayout>
-                  <Routes>
-                    <Route
-                      index
-                      element={
-                        <Homepage
-                          theme={currentTheme === lightTheme ? "light" : "dark"}
-                        />
-                      }
-                    />
-                  </Routes>
-                </AppLayout>
-              }
-            />
-            <Route
-              path="/products"
-              element={
-                <AppLayout>
-                  <ProductsPage />
-                </AppLayout>
-              }
-            />
-            <Route
-              path="/bio"
-              element={
-                <AppLayout>
-                  <BioPage />
-                </AppLayout>
-              }
-            />
-          </Routes>
+          <AppLayout>
+            <Routes>
+              <Route path="/" element={<Homepage isDark={isDark} />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/bio" element={<BioPage isDark={isDark} />} />
+              <Route
+                path="/gallery"
+                element={<GalleryPage isDark={isDark} />}
+              />
+            </Routes>
+          </AppLayout>
         </BrowserRouter>
       </CartProvider>
     </ThemeProvider>

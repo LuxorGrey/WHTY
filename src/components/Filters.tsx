@@ -1,11 +1,12 @@
 import { ChangeEvent, useId } from "react";
 import { useFilters } from "../hooks/useFilters";
 import {
-  FiltersContainer,
-  FilterSection,
-  FilterLabel,
   FilterInput,
+  FilterLabel,
+  FilterSectionLeft,
+  FilterSectionRight,
   FilterSelect,
+  FiltersContainer,
 } from "../styled-components/Filters.styled";
 
 type Filters = {
@@ -43,7 +44,7 @@ export function Filters() {
 
   return (
     <FiltersContainer>
-      <FilterSection>
+      <FilterSectionLeft>
         <FilterLabel htmlFor={minPriceFilterId}>Price</FilterLabel>
         <FilterInput
           type="range"
@@ -54,24 +55,21 @@ export function Filters() {
           value={filters.minPrice}
         />
         <span>${filters.minPrice}</span>
-      </FilterSection>
-
-      <FilterSection>
+      </FilterSectionLeft>
+      <FilterSectionRight>
         <FilterLabel htmlFor={orderFilterId}>Order by</FilterLabel>
         <FilterSelect id={orderFilterId} onChange={handleChangeOrder}>
           <option value="price">Price</option>
           <option value="rating">Rating</option>
           <option value="stock">Stock</option>
         </FilterSelect>
-      </FilterSection>
-      <FilterSection>
         <FilterLabel htmlFor={categoryFilterId}>Category</FilterLabel>
         <FilterSelect id={categoryFilterId} onChange={handleChangeCategory}>
-          <option value="all">Todas</option>
+          <option value="all">All</option>
           <option value="artwork">Artwork</option>
           <option value="clothing">Clothing</option>
         </FilterSelect>
-      </FilterSection>
+      </FilterSectionRight>
     </FiltersContainer>
   );
 }

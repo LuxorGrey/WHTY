@@ -3,17 +3,17 @@ import MoonIcon from "./icons/MoonIcon";
 import SunIcon from "./icons/SunIcon";
 interface HeaderProps {
   toggleTheme: () => void;
-  theme: string;
+  isDark: boolean;
 }
 
-export default function Switch({ toggleTheme, theme }: HeaderProps) {
+export default function Switch({ toggleTheme, isDark }: HeaderProps) {
   return (
     <div style={{ display: "flex", paddingRight: "20px" }}>
       <SunIcon />
       <label className="toggle-switch">
         <input
           type="checkbox"
-          checked={theme === "dark"}
+          checked={isDark}
           onChange={toggleTheme}
         />
         <span className="switch" />
