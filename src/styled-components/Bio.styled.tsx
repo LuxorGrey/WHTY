@@ -59,3 +59,9 @@ export const BoxContainer = styled.div`
     max-width: 31.5315%;
   }
 `;
+export const ParagraphBio = styled.p`
+  mix-blend-mode: normal;
+  opacity: 0.8;
+  text-align: left;
+  margin-bottom: 3em;
+`;

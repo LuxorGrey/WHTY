@@ -1,15 +1,12 @@
-import ImageParallax1 from "../assets/gifs/gifSphere7.gif";
-import Image1 from "../assets/image/cardMinimal6.png";
-import ImageHover1 from "../assets/image/cardMinimalHover6.png";
 import ImageParallax2 from "../assets/gifs/gifSphere2.gif";
-import Image2 from "../assets/image/cardMinimal5.png";
-import ImageHover2 from "../assets/image/cardMinimalHover5.png";
-
 import ImageParallax3 from "../assets/gifs/gifSphere5.gif";
-import {
-  default as Image3,
-  default as ImageHover3,
-} from "../assets/image/cardMinimal4.png";
+import ImageParallax1 from "../assets/gifs/gifSphere7.gif";
+import Image3 from "../assets/image/cardMinimal4.png";
+import Image2 from "../assets/image/cardMinimal5.png";
+import Image1 from "../assets/image/cardMinimal6.png";
+import ImageHover3 from "../assets/image/cardMinimalHover4.png";
+import ImageHover2 from "../assets/image/cardMinimalHover5.png";
+import ImageHover1 from "../assets/image/cardMinimalHover6.png";
 
 const content = [
   {
@@ -21,7 +18,7 @@ const content = [
     parallaxImage: ImageParallax2,
     logo: <></>,
     borderColor: "#c689ee",
-    buttonText: "See more",
+    buttonText: "WATCH VIDEOCLIPS",
   },
   {
     id: 2,
@@ -32,7 +29,7 @@ const content = [
     parallaxImage: ImageParallax1,
     logo: <></>,
     borderColor: "#ff6600",
-    buttonText: "See more",
+    buttonText: "WATCH 3D WORKS",
   },
   {
     id: 3,
@@ -43,7 +40,7 @@ const content = [
     parallaxImage: ImageParallax3,
     logo: <></>,
     borderColor: "#ffbd30",
-    buttonText: "See more",
+    buttonText: "WATCH IMAGES",
   },
 ];
 

@@ -12,6 +12,9 @@ import BioPage from "./pages/BioPage";
 import PreLoader from "./pages/PreLoader";
 import isDarkUtils from "./components/utils/isDarkUtils";
 import GalleryPage from "./pages/GalleryPage";
+import Gallery3DPage from "./components/Gallery3D";
+import GalleryImagesPage from "./components/GalleryImages";
+import GalleryVideoclipsPage from "./components/GalleryVideoclips";
 
 export const App = () => {
   const [currentTheme, setCurrentTheme] = useState(darkTheme);
@@ -44,6 +47,18 @@ export const App = () => {
               <Route
                 path="/gallery"
                 element={<GalleryPage isDark={isDark} />}
+              />
+              <Route
+                path="/3d"
+                element={<Gallery3DPage isDark={isDark} />}
+              />
+              <Route
+                path="/images"
+                element={<GalleryImagesPage isDark={isDark} />}
+              />
+              <Route
+                path="/videoclips"
+                element={<GalleryVideoclipsPage isDark={isDark} />}
               />
             </Routes>
           </AppLayout>
