@@ -1,10 +1,14 @@
+import Gallery from "react-photo-gallery";
 interface GalleryPortfolioProps {
-  items: [];
+  items: { src: string; width: number; height: number }[];
 }
 
 const GalleryPortfolio = ({ items }: GalleryPortfolioProps) => {
-  console.log(items);
-  return <div></div>;
+  return (
+    <div>
+      <Gallery photos={items} />;
+    </div>
+  );
 };
 
 export default GalleryPortfolio;

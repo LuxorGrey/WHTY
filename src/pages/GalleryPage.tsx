@@ -1,9 +1,9 @@
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
-import galleryAvatarDark from "../assets/image/darkAvatarGallery.png";
-import Drop from "../assets/image/drop.png";
-import LightBackground from "../assets/image/lightBackground.png";
+import galleryAvatarDark from "../assets/image/avatars/darkAvatarGallery.png";
+import Drop from "../assets/image/decorations/drop.png";
+import LightBackground from "../assets/image/backgrounds/lightBackground.png";
 import ContainerImagesHome from "../components/ContainerImagesHome.tsx";
-import { IsDarkProps } from "../components/types/isDarkType.ts";
+import { IsDarkProps } from "../components/isDark/types/isDarkType.ts";
 import contentGallery from "../mock/contentGallery.tsx";
 import { HeaderBackground } from "../styled-components/Gallery.styled.tsx";
 import {

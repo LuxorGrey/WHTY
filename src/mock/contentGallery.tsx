@@ -1,12 +1,12 @@
 import ImageParallax2 from "../assets/gifs/gifSphere2.gif";
 import ImageParallax3 from "../assets/gifs/gifSphere5.gif";
 import ImageParallax1 from "../assets/gifs/gifSphere7.gif";
-import Image3 from "../assets/image/cardMinimal4.png";
-import Image2 from "../assets/image/cardMinimal5.png";
-import Image1 from "../assets/image/cardMinimal6.png";
-import ImageHover3 from "../assets/image/cardMinimalHover4.png";
-import ImageHover2 from "../assets/image/cardMinimalHover5.png";
-import ImageHover1 from "../assets/image/cardMinimalHover6.png";
+import Image3 from "../assets/image/sections/cardMinimal4.png";
+import Image2 from "../assets/image/sections/cardMinimal5.png";
+import Image1 from "../assets/image/sections/cardMinimal6.png";
+import ImageHover3 from "../assets/image/sections/cardMinimalHover4.png";
+import ImageHover2 from "../assets/image/sections/cardMinimalHover5.png";
+import ImageHover1 from "../assets/image/sections/cardMinimalHover6.png";
 
 const content = [
   {

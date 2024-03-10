@@ -1,16 +1,16 @@
 import { AlienStreetLogo } from "../assets/image/logos/AlienStreetLogo";
 import { WLogo } from "../assets/image/logos/W_LOGO";
 import { WLogo2 } from "../assets/image/logos/W_LOGO2";
-import Image1 from "../assets/image/cardMinimal1.png";
-import ImageHover1 from "../assets/image/cardMinimalHover1.png";
+import Image1 from "../assets/image/sections/cardMinimal1.png";
+import ImageHover1 from "../assets/image/sections/cardMinimalHover1.png";
 import ImageParallax1 from "../assets/gifs/hearth.gif";
 
-import Image2 from "../assets/image/cardMinimal2.png";
-import ImageHover2 from "../assets/image/cardMinimalHover2.png";
+import Image2 from "../assets/image/sections/cardMinimal2.png";
+import ImageHover2 from "../assets/image/sections/cardMinimalHover2.png";
 import ImageParallax2 from "../assets/gifs/gifSphere6.gif";
 
-import Image3 from "../assets/image/cardMinimal3.png";
-import ImageHover3 from "../assets/image/cardMinimalHover3.png";
+import Image3 from "../assets/image/sections/cardMinimal3.png";
+import ImageHover3 from "../assets/image/sections/cardMinimalHover3.png";
 import ImageParallax3 from "../assets/gifs/gifSphere4.gif";
 
 const content = [

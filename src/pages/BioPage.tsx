@@ -1,7 +1,7 @@
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
-import bioAvatarLight from "../assets/image/bioAvatarLight.png";
-import bioAvatarDark from "../assets/image/bioAvatarDark.png";
-import { IsDarkProps } from "../components/types/isDarkType.ts";
+import bioAvatarLight from "../assets/image/backgrounds/bioAvatarLight.png";
+import bioAvatarDark from "../assets/image/backgrounds/bioAvatarDark.png";
+import { IsDarkProps } from "../components/isDark/types/isDarkType.ts";
 import {
   BoxContainer,
   Container,
@@ -13,9 +13,9 @@ import { WLogo2 } from "../assets/image/logos/W_LOGO2";
 import Button from "../styled-components/Button.styled.tsx";
 import { useNavigate } from "react-router-dom";
 import { ParallaxImageDomain } from "../styled-components/LandingImage.styled.tsx";
-import Drop from "../assets/image/drop.png";
-import galleryAvatarLight from "../assets/image/lightAvatarGallery.png";
-import bioAvatar from "../assets/image/bioAvatar.png";
+import Drop from "../assets/image/decorations/drop.png";
+import galleryAvatarLight from "../assets/image/avatars/lightAvatarGallery.png";
+import bioAvatar from "../assets/image/avatars/bioAvatar.png";
 import {
   HeaderContainer,
   ProfileImage,

@@ -1,6 +1,6 @@
-import GalleryHeader from "./GalleryHeader.tsx";
-import GalleryPortfolio from "./GalleryPorfolio.tsx";
-import { IsDarkProps } from "./types/isDarkType.ts";
+import GalleryHeader from "../components/GalleryHeader.tsx";
+import GalleryPortfolio from "../components/GalleryPorfolio.tsx";
+import { IsDarkProps } from "../components/isDark/types/isDarkType.ts";
 
 const GalleryVideoclipsPage = ({ isDark }: IsDarkProps) => {
   console.log(isDark);

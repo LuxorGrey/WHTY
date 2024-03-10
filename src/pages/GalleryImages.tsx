@@ -1,6 +1,19 @@
-import GalleryHeader from "./GalleryHeader.tsx";
-import GalleryPortfolio from "./GalleryPorfolio.tsx";
-import { IsDarkProps } from "./types/isDarkType.ts";
+import GalleryHeader from "../components/GalleryHeader.tsx";
+import GalleryPortfolio from "../components/GalleryPorfolio.tsx";
+import { IsDarkProps } from "../components/isDark/types/isDarkType.ts";
+
+// const photos = [
+//   {
+//     src: galleryAvatarLight,
+//     width: 4,
+//     height: 3,
+//   },
+//   {
+//     src: bioAvatar,
+//     width: 1,
+//     height: 1,
+//   },
+// ];
 
 const GalleryImagesPage = ({ isDark }: IsDarkProps) => {
   console.log(isDark);

@@ -1,14 +1,14 @@
 import { animated, to as interpolate, useSprings } from "@react-spring/web";
 import { useState } from "react";
 import { useDrag } from "react-use-gesture";
-import Card1 from "../../src/assets/image/Cards/card1.png";
-import Card2 from "../../src/assets/image/Cards/card2.png";
-import Card3 from "../../src/assets/image/Cards/card3.png";
-import Card4 from "../../src/assets/image/Cards/card4.png";
-import Card5 from "../../src/assets/image/Cards/card5.png";
-import Card6 from "../../src/assets/image/Cards/card6.png";
-import Card7 from "../../src/assets/image/Cards/card7.png";
-import { ContainerWrapCards } from "../styled-components/Container.styled";
+import Card1 from "../../assets/image/Cards/card1.png";
+import Card2 from "../../assets/image/Cards/card2.png";
+import Card3 from "../../assets/image/Cards/card3.png";
+import Card4 from "../../assets/image/Cards/card4.png";
+import Card5 from "../../assets/image/Cards/card5.png";
+import Card6 from "../../assets/image/Cards/card6.png";
+import Card7 from "../../assets/image/Cards/card7.png";
+import { ContainerWrapCards } from "../../styled-components/Container.styled";
 import styles from "./css/card3D.module.css";
 
 const cards: string[] = [Card1, Card2, Card3, Card4, Card5, Card6, Card7];

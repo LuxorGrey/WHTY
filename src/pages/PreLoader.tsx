@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import ImageParallax1 from "../assets/gifs/gifSphere7.gif";
 import ImageParallax2 from "../assets/gifs/gifSphere4.gif";
 import { WLogo2 } from "../assets/image/logos/W_LOGO2";
-import preLoaderBackground1 from "../assets/image/preLoaderBackground.png";
-import preLoaderBackground from "../assets/image/preLoaderBackground1.png";
+import preLoaderBackground1 from "../assets/image/backgrounds/preLoaderBackground.png";
+import preLoaderBackground from "../assets/image/backgrounds/preLoaderBackground1.png";
 import { StickyImageCardCenter } from "../components/StickyImage";
 import { HeaderBackground } from "../styled-components/Gallery.styled";
 import {
@@ -13,7 +13,7 @@ import {
   PreLoaderContainerText,
   TextPreLoader,
 } from "../styled-components/PreLoader.styled";
-import { IsDarkProps } from "../components/types/isDarkType";
+import { IsDarkProps } from "../components/isDark/types/isDarkType";
 
 export default function PreLoader({ isDark }: IsDarkProps) {
   useEffect(() => {

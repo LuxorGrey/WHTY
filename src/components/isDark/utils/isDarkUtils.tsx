@@ -1,4 +1,4 @@
-import { darkTheme } from "../../styles";
+import { darkTheme } from "../../../styles";
 import { ThemeType } from "../types/themeTypes";
 
 const isDarkUtils = (currentTheme: ThemeType): boolean => {

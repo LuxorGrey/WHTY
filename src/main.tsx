@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
+import App from "./pages/App.tsx";
 import { FiltersProvider } from "./context/filters.jsx";
 import "./index.css";
 

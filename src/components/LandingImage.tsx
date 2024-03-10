@@ -1,9 +1,9 @@
 import { Parallax } from "react-scroll-parallax";
-import DarkAvatar from "../assets/image/darkAvatar.png";
-import LightAvatar from "../assets/image/lightAvatar.png";
-import DarkBackground from "../assets/image/darkBackground.png";
-import Drop from "../assets/image/drop.png";
-import LightBackground from "../assets/image/lightBackground.png";
+import DarkAvatar from "../assets/image/avatars/darkAvatar.png";
+import LightAvatar from "../assets/image/avatars/lightAvatar.png";
+import DarkBackground from "../assets/image/backgrounds/darkBackground.png";
+import Drop from "../assets/image/decorations//drop.png";
+import LightBackground from "../assets/image/backgrounds/lightBackground.png";
 import Button from "../styled-components/Button.styled";
 import Flex from "../styled-components/Flex.styled";
 import {
@@ -15,7 +15,7 @@ import {
   TextOverlay,
 } from "../styled-components/LandingImage.styled";
 import { Text, TextHeader } from "../styled-components/LandingText.styled";
-import { IsDarkProps } from "./types/isDarkType";
+import { IsDarkProps } from "./isDark/types/isDarkType";
 import { useNavigate } from "react-router-dom";
 
 export const ParallaxImageWithText = ({ isDark }: IsDarkProps) => {

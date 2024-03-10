@@ -4,9 +4,9 @@ import { Products } from "../components/Products";
 import { useFilters } from "../hooks/useFilters";
 import { products as initialProducts } from "../mock/products.json";
 import { HeaderBackground } from "../styled-components/Gallery.styled";
-import productBackground from "../assets/image/productBackground.png";
+import productBackground from "../assets/image/backgrounds/productBackground.png";
 import { BackgroundContainer } from "../styled-components/LandingImage.styled";
-export function ProductsPage() {
+const ProductsPage = () => {
   const { filterProducts } = useFilters();
   const filteredProducts = filterProducts(initialProducts);
   return (
@@ -18,4 +18,5 @@ export function ProductsPage() {
       </BackgroundContainer>
     </ParallaxProvider>
   );
-}
+};
+export default ProductsPage;
