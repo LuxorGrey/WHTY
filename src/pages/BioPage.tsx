@@ -6,6 +6,7 @@ import bioAvatarDark from "../assets/image/backgrounds/bioAvatarDark.png";
 import bioAvatarLight from "../assets/image/backgrounds/bioAvatarLight.png";
 import Drop from "../assets/image/decorations/drop.png";
 import { WLogo2 } from "../assets/image/logos/W_LOGO2";
+import SocialIcons from "../components/SocialIcons.tsx";
 import { useTheme } from "../context/themeContext.jsx";
 import {
   BoxContainer,
@@ -60,10 +61,8 @@ const BioPage = () => {
             realizamos, convirtiéndola en una referencia en la industria del
             arte digital.
           </ParagraphBio>
-
-          <Button onClick={() => navigate("/gallery")} animated={true}>
-            SHOW GALLERY
-          </Button>
+          <Button onClick={() => navigate("/gallery")}>SHOW GALLERY</Button>
+          <SocialIcons />
         </BoxContainer>
       </Container>
     </Section>

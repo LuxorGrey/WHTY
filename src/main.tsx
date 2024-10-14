@@ -1,10 +1,5 @@
 import ReactDOM from "react-dom/client";
-import App from "./pages/App.tsx";
-import { FiltersProvider } from "./context/filters.jsx";
 import "./index.css";
+import App from "./pages/App.tsx";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <FiltersProvider>
-    <App />
-  </FiltersProvider>
-);
+ReactDOM.createRoot(document.getElementById("root")!).render(<App />);

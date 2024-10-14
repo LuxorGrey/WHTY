@@ -1,15 +1,12 @@
 import { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import { CartProvider } from "../context/cart";
 import { ThemeProvider, useTheme } from "../context/themeContext";
 import GlobalStyles from "../styled-components/Global";
 import AppLayout from "./AppLayout";
-import PreLoader from "./PreLoader";
 
 // Lazy load de los componentes
 const Homepage = lazy(() => import("./Homepage"));
-const ProductsPage = lazy(() => import("./ProductsPage"));
 const BioPage = lazy(() => import("./BioPage"));
 const GalleryPage = lazy(() => import("./GalleryPage"));
 
@@ -35,30 +32,27 @@ const ThemedApp = () => {
 
   return (
     <StyledThemeProvider theme={currentTheme}>
-      <CartProvider>
-        <GlobalStyles />
-        <BrowserRouter>
-          <AppLayout>
-            <Suspense fallback={<PreLoader />}>
-              <Routes>
-                {/* Páginas existentes */}
-                <Route path="/" element={<Homepage />} />
-                <Route path="/products" element={<ProductsPage />} />
-                <Route path="/bio" element={<BioPage />} />
-                <Route path="/gallery" element={<GalleryPage />} />
+      <GlobalStyles />
+      <BrowserRouter>
+        <AppLayout>
+          <Suspense>
+            <Routes>
+              {/*Basics */}
+              <Route path="/" element={<Homepage />} />
+              <Route path="/bio" element={<BioPage />} />
+              <Route path="/gallery" element={<GalleryPage />} />
 
-                {/* Nuevas rutas para las páginas de galería */}
-                <Route path="/3d" element={<GalleryPage3D />} />
-                <Route path="/videoclips" element={<GalleryPageVideoclip />} />
-                <Route path="/design" element={<GalleryPageDesign />} />
-                <Route path="/logos" element={<GalleryPageLogo />} />
-                <Route path="/photos" element={<GalleryPagePhotos />} />
-                <Route path="/covers" element={<GalleryPageCover />} />
-              </Routes>
-            </Suspense>
-          </AppLayout>
-        </BrowserRouter>
-      </CartProvider>
+              {/*Gallery */}
+              <Route path="/3d" element={<GalleryPage3D />} />
+              <Route path="/videoclips" element={<GalleryPageVideoclip />} />
+              <Route path="/design" element={<GalleryPageDesign />} />
+              <Route path="/logos" element={<GalleryPageLogo />} />
+              <Route path="/photos" element={<GalleryPagePhotos />} />
+              <Route path="/covers" element={<GalleryPageCover />} />
+            </Routes>
+          </Suspense>
+        </AppLayout>
+      </BrowserRouter>
     </StyledThemeProvider>
   );
 };

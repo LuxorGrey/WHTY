@@ -8,7 +8,6 @@ import {
   TextCard,
   TextCardTitle,
 } from "../styled-components/Card.styled";
-import { useNavigate } from "react-router-dom";
 
 export interface CardProps {
   item: {
@@ -20,29 +19,23 @@ export interface CardProps {
     borderColor: string;
     buttonText: string;
     hoverImage: string;
+    urlButton: string;
   };
 }
 
 export default function Card({ item }: CardProps) {
-  const { id, title, body, image, logo, borderColor, buttonText, hoverImage } =
-    item;
+  const {
+    id,
+    title,
+    body,
+    image,
+    logo,
+    borderColor,
+    buttonText,
+    hoverImage,
+    urlButton,
+  } = item;
   const [isHover, setIsHover] = useState(false);
-  const navigate = useNavigate();
-  const handleButtonClick = () => {
-    switch (title) {
-      case "VIDEOCLIPS/FX":
-        navigate("/videoclips");
-        break;
-      case "3D ART":
-        navigate("/3d");
-        break;
-      case "IMAGEN":
-        navigate("/imagen");
-        break;
-      default:
-        break;
-    }
-  };
 
   return (
     <StyledCard
@@ -56,7 +49,10 @@ export default function Card({ item }: CardProps) {
         <TextCardTitle borderColor={borderColor}>{title}</TextCardTitle>
         <TextCard>{body}</TextCard>
       </ContainerCard>
-      <Button borderColor={borderColor} onClick={handleButtonClick}>
+      <Button
+        borderColor={borderColor}
+        onClick={() => window.open(urlButton, "_blank")}
+      >
         {buttonText}
       </Button>
 

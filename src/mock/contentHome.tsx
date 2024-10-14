@@ -23,7 +23,8 @@ const content = [
     parallaxImage: ImageParallax1,
     logo: <WLogo2 width={450} />,
     borderColor: "red",
-    buttonText: "WHTY SHOP",
+    buttonText: "WHTY ACCOUNT",
+    urlButton: "https://www.instagram.com/whaitystudios/",
   },
   {
     id: 2,
@@ -33,8 +34,9 @@ const content = [
     hoverImage: ImageHover2,
     parallaxImage: ImageParallax2,
     logo: <AlienStreetLogo width={450} />,
-    buttonText: "ALIENS SHOP",
+    buttonText: "ALIENS ACCOUNT",
     borderColor: "#399caf",
+    urlButton: "https://www.instagram.com/streetaliens/",
   },
   {
     id: 3,
@@ -45,7 +47,8 @@ const content = [
     parallaxImage: ImageParallax3,
     logo: <WLogo width={450} />,
     borderColor: "pink",
-    buttonText: "FASION SHOP",
+    buttonText: "FASHION ACCOUNT",
+    urlButton: "https://www.instagram.com/whaity.lab/",
   },
 ];
 

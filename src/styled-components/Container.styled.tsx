@@ -8,16 +8,21 @@ export const Container = styled.div`
 `;
 export const ContainerWrap = styled.div`
   display: flex;
-  justify-content: flex-end; 
-  gap: 10px; 
+  justify-content: flex-end;
+  gap: 10px;
 `;
 
 export const ContainerWrapCards = styled.div`
-  max-width: 100vw; 
+  max-width: 100vw;
   display: flex;
-  gap: 10px; 
+  gap: 10px;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    display: none; /* Oculta en pantallas móviles */
+  }
 `;
+
 export default Container;

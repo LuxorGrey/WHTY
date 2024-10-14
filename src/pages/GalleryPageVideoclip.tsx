@@ -1,20 +1,21 @@
-import GalleryContent from "../components/GalleryContent";
-import image1 from "../assets/image/logos/logo1.jpg";
-import image2 from "../assets/image/logos/logo2.jpg";
-import image3 from "../assets/image/logos/logo3.jpg";
-import image4 from "../assets/image/logos/logo4.jpg";
-import image5 from "../assets/image/logos/logo5.jpg";
-//
+import GalleryContentVideo from "../components/GalleryContentVideo";
+
 import background from "../assets/image/Headers/header2.jpg";
 
-const imagesLogo = [image1, image2, image3, image4, image5];
+const imagesLogo = [
+  "https://www.youtube.com/watch?v=pGYNpZ9DMN0",
+  "https://www.youtube.com/watch?v=8_toq7f2mM4",
+  "https://www.youtube.com/watch?v=b2XiyS_ZXfM",
+  "https://www.youtube.com/watch?v=VawUjP-9hXU",
+  "https://www.youtube.com/watch?v=hQh-nD1u9oU",
+];
 
 const GalleryPageVideoclips = () => {
   return (
-    <GalleryContent
+    <GalleryContentVideo
       title="Videoclips"
       backgroundUrl={background}
-      images={imagesLogo}
+      videos={imagesLogo}
     />
   );
 };

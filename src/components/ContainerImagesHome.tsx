@@ -13,6 +13,7 @@ interface Content {
   logo: React.ReactNode; // Componente de logo
   borderColor: string; // Color del borde
   buttonText: string;
+  urlButton: string;
 }
 
 const ContainerImagesHome = ({ content }: { content: Content[] }) => {

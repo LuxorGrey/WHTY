@@ -26,6 +26,7 @@ export const NavLink = styled.a`
   }
   animation: ${trackingInExpand} 1s ease forwards;
 `;
+
 export const NavLinkLocal = styled.div`
   cursor: pointer;
   color: ${({ theme }) => theme.colors.text};
@@ -36,5 +37,65 @@ export const NavLinkLocal = styled.div`
     color: ${({ theme }) => theme.colors.icons};
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
-  animation: ${trackingInExpand} 1s ease forwards;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem; /* Aumenta el tamaño del texto en móvil */
+  }
 `;
+
+
+// Contenedor del header principal
+export const StyledHeader = styled.header`
+  width: 100%;
+  padding: 0 2rem;
+  background-color: ${({ theme }) => theme.colors.background};
+  position: relative;
+`;
+
+// Estilos para el contenedor del nav (barra de navegación)
+export const Nav = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .desktop-menu {
+    display: flex;
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+      display: none; /* Esconder el menú de escritorio en pantallas pequeñas */
+    }
+  }
+`;
+
+// Icono de menú hamburguesa para pantallas móviles
+export const MobileMenuIcon = styled.div`
+  display: none;
+  cursor: pointer;
+  z-index: 10;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
+// Menú desplegable en pantallas móviles
+export const MobileNavList = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: ${({ theme }) => theme.colors.background};
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  z-index: 9;
+
+  a {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+`;
+

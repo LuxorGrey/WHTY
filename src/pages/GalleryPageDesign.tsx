@@ -6,7 +6,7 @@ import image4 from "../assets/image/Design/design4.jpg";
 import image5 from "../assets/image/Design/design5.jpg";
 import image6 from "../assets/image/Design/design6.jpg";
 //
-import background from "../assets/image/Headers/header2.jpg";
+import background from "../assets/image/Headers/header1.jpg";
 
 const imagesDesign = [image1, image2, image3, image4, image5, image6];
 
