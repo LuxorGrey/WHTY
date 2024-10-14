@@ -3,8 +3,7 @@ import { FaShopify } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { WLogo } from "../assets/image/logos/W_LOGO";
 import { WLogo2 } from "../assets/image/logos/W_LOGO2";
-import { useCart } from "../hooks/useCart";
-import { CartIconNumber } from "../styled-components/Cart.styled";
+import { useTheme } from "../context/themeContext";
 import {
   Container,
   ContainerWrap,
@@ -15,19 +14,14 @@ import {
   NavList,
   SeparatorVertical,
 } from "../styled-components/Nav.styled";
-import Cart from "./Cart";
 import LinkWithIcon from "./LinkWithIcon";
 import Switch from "./Switcher/Switch";
-interface HeaderProps {
-  toggleTheme: () => void;
-  isDark: boolean;
-}
 
-export default function Header({ toggleTheme, isDark }: HeaderProps) {
+export default function Header() {
   const [isHover, setIsHover] = useState(false);
-  const { cart } = useCart();
+  // const { cart } = useCart();
   const navigate = useNavigate();
-
+  const { isDark, toggleTheme } = useTheme();
   return (
     <StyledHeader>
       <Container>
@@ -44,15 +38,15 @@ export default function Header({ toggleTheme, isDark }: HeaderProps) {
             <NavList>
               <NavLinkLocal onClick={() => navigate("/")}>HOME</NavLinkLocal>
               <SeparatorVertical />
-              <NavLinkLocal onClick={() => navigate("/gallery")}>
+              <NavLinkLocal onClick={() => navigate("gallery")}>
                 GALLERY
               </NavLinkLocal>
-              <SeparatorVertical />
-              <NavLinkLocal onClick={() => navigate("/products")}>
+              {/* <SeparatorVertical />
+              <NavLinkLocal onClick={() => navigate("products")}>
                 PRODUCTS
-              </NavLinkLocal>
+              </NavLinkLocal> */}
               <SeparatorVertical />
-              <NavLinkLocal onClick={() => navigate("/bio")}>BIO</NavLinkLocal>
+              <NavLinkLocal onClick={() => navigate("bio")}>BIO</NavLinkLocal>
             </NavList>
           </div>
 
@@ -62,7 +56,7 @@ export default function Header({ toggleTheme, isDark }: HeaderProps) {
               to="https://www.whaitystudios.com/"
               icon={<FaShopify />}
             />
-            <Cart /> <CartIconNumber>({cart.length})</CartIconNumber>
+            {/* <Cart /> <CartIconNumber>({cart.length})</CartIconNumber> */}
           </ContainerWrap>
         </Nav>
       </Container>

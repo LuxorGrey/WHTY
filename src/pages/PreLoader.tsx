@@ -1,10 +1,10 @@
 import gsap from "gsap";
 import { useEffect } from "react";
-import ImageParallax1 from "../assets/gifs/gifSphere7.gif";
 import ImageParallax2 from "../assets/gifs/gifSphere4.gif";
-import { WLogo2 } from "../assets/image/logos/W_LOGO2";
+import ImageParallax1 from "../assets/gifs/gifSphere7.gif";
 import preLoaderBackground1 from "../assets/image/backgrounds/preLoaderBackground.png";
 import preLoaderBackground from "../assets/image/backgrounds/preLoaderBackground1.png";
+import { WLogo2 } from "../assets/image/logos/W_LOGO2";
 import { StickyImageCardCenter } from "../components/StickyImage";
 import { HeaderBackground } from "../styled-components/Gallery.styled";
 import {
@@ -13,9 +13,10 @@ import {
   PreLoaderContainerText,
   TextPreLoader,
 } from "../styled-components/PreLoader.styled";
-import { IsDarkProps } from "../components/isDark/types/isDarkType";
+import { useTheme } from "../context/themeContext";
 
-export default function PreLoader({ isDark }: IsDarkProps) {
+export default function PreLoader() {
+  const { isDark } = useTheme();
   useEffect(() => {
     const tl = gsap.timeline();
 

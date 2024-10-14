@@ -1,71 +1,65 @@
-import { ReactNode, useState, lazy, Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { CartProvider } from "../context/cart";
+import { ThemeProvider, useTheme } from "../context/themeContext";
 import GlobalStyles from "../styled-components/Global";
-import { darkTheme, lightTheme } from "../styles";
+import AppLayout from "./AppLayout";
 import PreLoader from "./PreLoader";
-import isDarkUtils from "../components/isDark/utils/isDarkUtils";
 
-// Lazy load the components
+// Lazy load de los componentes
 const Homepage = lazy(() => import("./Homepage"));
 const ProductsPage = lazy(() => import("./ProductsPage"));
 const BioPage = lazy(() => import("./BioPage"));
 const GalleryPage = lazy(() => import("./GalleryPage"));
-const Gallery3DPage = lazy(() => import("./Gallery3D"));
-const GalleryImagesPage = lazy(() => import("./GalleryImages"));
-const GalleryVideoclipsPage = lazy(() => import("./GalleryVideoclips"));
+
+// Lazy load de los nuevos componentes de galería
+const GalleryPage3D = lazy(() => import("./GalleryPage3D"));
+const GalleryPageVideoclip = lazy(() => import("./GalleryPageVideoclip"));
+const GalleryPageDesign = lazy(() => import("./GalleryPageDesign"));
+const GalleryPageLogo = lazy(() => import("./GalleryPageLogos"));
+const GalleryPagePhotos = lazy(() => import("./GalleryPagePhotos"));
+const GalleryPageCover = lazy(() => import("./GalleryPageCover"));
 
 export const App = () => {
-  const [currentTheme, setCurrentTheme] = useState(darkTheme);
-  const isDark = isDarkUtils(currentTheme);
-  const toggleTheme = () => {
-    setCurrentTheme(currentTheme === lightTheme ? darkTheme : lightTheme);
-  };
+  return (
+    <ThemeProvider>
+      <ThemedApp />
+    </ThemeProvider>
+  );
+};
 
-  const AppLayout = ({ children }: { children: ReactNode }) => {
-    return (
-      <div>
-        <PreLoader isDark={isDark} />
-        <Header toggleTheme={toggleTheme} isDark={isDark} />
-        {children}
-        <Footer />
-      </div>
-    );
-  };
+// El componente principal que consume el contexto del tema
+const ThemedApp = () => {
+  const { currentTheme } = useTheme();
 
   return (
-    <ThemeProvider theme={currentTheme}>
+    <StyledThemeProvider theme={currentTheme}>
       <CartProvider>
         <GlobalStyles />
         <BrowserRouter>
           <AppLayout>
-            <Suspense fallback={<PreLoader isDark={isDark} />}>
+            <Suspense fallback={<PreLoader />}>
               <Routes>
-                <Route path="/" element={<Homepage isDark={isDark} />} />
+                {/* Páginas existentes */}
+                <Route path="/" element={<Homepage />} />
                 <Route path="/products" element={<ProductsPage />} />
-                <Route path="/bio" element={<BioPage isDark={isDark} />} />
-                <Route
-                  path="/gallery"
-                  element={<GalleryPage isDark={isDark} />}
-                />
-                <Route path="/3d" element={<Gallery3DPage isDark={isDark} />} />
-                <Route
-                  path="/images"
-                  element={<GalleryImagesPage isDark={isDark} />}
-                />
-                <Route
-                  path="/videoclips"
-                  element={<GalleryVideoclipsPage isDark={isDark} />}
-                />
+                <Route path="/bio" element={<BioPage />} />
+                <Route path="/gallery" element={<GalleryPage />} />
+
+                {/* Nuevas rutas para las páginas de galería */}
+                <Route path="/3d" element={<GalleryPage3D />} />
+                <Route path="/videoclips" element={<GalleryPageVideoclip />} />
+                <Route path="/design" element={<GalleryPageDesign />} />
+                <Route path="/logos" element={<GalleryPageLogo />} />
+                <Route path="/photos" element={<GalleryPagePhotos />} />
+                <Route path="/covers" element={<GalleryPageCover />} />
               </Routes>
             </Suspense>
           </AppLayout>
         </BrowserRouter>
       </CartProvider>
-    </ThemeProvider>
+    </StyledThemeProvider>
   );
 };
 

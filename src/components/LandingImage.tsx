@@ -1,9 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { Parallax } from "react-scroll-parallax";
 import DarkAvatar from "../assets/image/avatars/darkAvatar.png";
 import LightAvatar from "../assets/image/avatars/lightAvatar.png";
 import DarkBackground from "../assets/image/backgrounds/darkBackground.png";
-import Drop from "../assets/image/decorations//drop.png";
 import LightBackground from "../assets/image/backgrounds/lightBackground.png";
+import Drop from "../assets/image/decorations//drop.png";
 import Button from "../styled-components/Button.styled";
 import Flex from "../styled-components/Flex.styled";
 import {
@@ -15,11 +16,11 @@ import {
   TextOverlay,
 } from "../styled-components/LandingImage.styled";
 import { Text, TextHeader } from "../styled-components/LandingText.styled";
-import { IsDarkProps } from "./isDark/types/isDarkType";
-import { useNavigate } from "react-router-dom";
+import { useTheme } from "../context/themeContext";
 
-export const ParallaxImageWithText = ({ isDark }: IsDarkProps) => {
+export const ParallaxImageWithText = () => {
   const navigate = useNavigate();
+  const { isDark } = useTheme();
   return (
     <ParallaxContainer>
       <Parallax speed={-20} scale={[0.5, 1]} translateY={["-200px", "0px"]}>
@@ -49,11 +50,8 @@ export const ParallaxImageWithText = ({ isDark }: IsDarkProps) => {
               developed a problem-solving mindset, allowing me to approach
               challenges with creativity and technical skills
             </Text>
-            <Button
-              onClick={() => navigate("products")}
-              animated={true}
-            >
-              EXCLUSIVE COLLECTION
+            <Button onClick={() => navigate("bio")} animated={true}>
+              CONTACT US
             </Button>
           </div>
         </Flex>

@@ -34,7 +34,7 @@ export const Container = styled.div`
   }
 `;
 
-export const ImageContainer = styled.picture`
+export const ImageContainer = styled.img`
   margin-bottom: 32px;
 
   @media (min-width: 768px) {

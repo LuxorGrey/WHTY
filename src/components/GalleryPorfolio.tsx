@@ -4,11 +4,7 @@ interface GalleryPortfolioProps {
 }
 
 const GalleryPortfolio = ({ items }: GalleryPortfolioProps) => {
-  return (
-    <div>
-      <Gallery photos={items} />;
-    </div>
-  );
+  return <Gallery photos={items} />;
 };
 
 export default GalleryPortfolio;
