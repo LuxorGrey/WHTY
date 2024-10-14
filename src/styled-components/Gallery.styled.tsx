@@ -16,17 +16,24 @@ export const HeaderBackground = styled.img`
   opacity: 0.2;
   filter: blur(5px);
   left: 0;
+  /* Propiedades para hacer que la imagen no sea interactiva ni seleccionable */
+  user-select: none;
+  pointer-events: none;
+
+  @media (max-width: 768px) {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 480px) {
+    opacity: 0.6;
+  }
 `;
 
 export const HeaderContainer: React.FC<HeaderContainerProps> = styled.header`
-  width: 100%;
-  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
-  color: #fff;
-  height: 300px;
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.card};
 `;
@@ -87,8 +94,8 @@ export const CardGallery = styled.div`
 
 // Imagen dentro de la card
 export const ImageGallery = styled.img`
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   object-fit: cover;
   border-radius: 4px;
 `;

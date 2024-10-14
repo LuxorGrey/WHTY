@@ -1,4 +1,4 @@
-import { FaTiktok, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaTiktok, FaInstagram, FaYoutube, FaShopify } from "react-icons/fa";
 import { StyledSocialIcons } from "../styled-components/SocialIcons.styled";
 import LinkWithIcon from "./LinkWithIcon";
 
@@ -17,6 +17,7 @@ export default function SocialIcons() {
         to="https://www.instagram.com/whaitystudios/"
         icon={<FaInstagram />}
       />
+      <LinkWithIcon to="https://www.whaitystudios.com/" icon={<FaShopify />} />
     </StyledSocialIcons>
   );
 }

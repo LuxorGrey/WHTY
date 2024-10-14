@@ -5,8 +5,9 @@ export const NavList = styled.ul`
   list-style: none;
   display: flex;
   gap: 1rem;
-  width: 100%;
+  width: auto;
   height: auto;
+  padding: 0; /* Elimina el padding del ul */
 `;
 export const SeparatorVertical = styled.div`
   margin: 0em 0.2em;
@@ -43,13 +44,21 @@ export const NavLinkLocal = styled.div`
   }
 `;
 
-
 // Contenedor del header principal
 export const StyledHeader = styled.header`
   width: 100%;
-  padding: 0 2rem;
-  background-color: ${({ theme }) => theme.colors.background};
+  padding: 1rem;
   position: relative;
+  background-color: ${({ theme }) => theme.colors.background};
+`;
+
+export const ContainerHeader = styled.div`
+  max-width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: ${({ theme }) => theme.colors.header};
+  border-radius: 1rem;
 `;
 
 // Estilos para el contenedor del nav (barra de navegación)
@@ -98,4 +107,3 @@ export const MobileNavList = styled.ul`
     font-size: 1.2rem;
   }
 `;
-

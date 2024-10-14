@@ -31,7 +31,7 @@ export const LogoSVG = styled.svg<{
   x: string;
   fill?: string;
 }>`
-  max-width: ${({ width }) => width ?? 160};
+  max-width: ${({ width }) => (width ? width + "px" : 160)};
   margin-top: auto;
   margin-bottom: auto;
   fill: ${({ fill, theme }) => fill || theme.colors.icons};

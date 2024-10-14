@@ -29,11 +29,14 @@ export const HeaderWithParallax = ({
   return (
     <ParallaxContainer>
       <Parallax speed={-20} scale={[0.5, 1]} translateY={["-200px", "0px"]}>
-        <ParallaxImageDomain src={parallaxImage} />
+        <ParallaxImageDomain
+          src={parallaxImage}
+          style={{ opacity: 0.2, filter: " blur(1px)" }}
+        />
       </Parallax>
       <Parallax speed={-10} scale={[1.2, 1]}>
         <ParallaxImage
-          style={{ opacity: 0.4, filter: " blur(3px)" }}
+          style={{ opacity: 0.2, filter: " blur(3px)" }}
           src={isDark ? darkBackground : lightBackground}
           alt="Imagen de parallax"
         />

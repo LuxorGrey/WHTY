@@ -28,6 +28,10 @@ export const ParallaxImage = styled.img`
   transform: translateY(-20%);
   opacity: 0.5;
 
+  /* Propiedades para hacer que la imagen no sea interactiva ni seleccionable */
+  user-select: none;
+  pointer-events: none;
+
   @media (max-width: ${({ theme }) => theme.mobile}) {
     object-fit: cover;
     width: auto;
@@ -41,6 +45,19 @@ export const ParallaxImageDomain = styled.img`
   width: 100%;
   height: auto;
   opacity: 0.8;
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+
+  /* Propiedades para hacer que la imagen no sea interactiva ni seleccionable */
+  user-select: none;
+  pointer-events: none;
+
+  @media (max-width: 768px) {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 480px) {
+    opacity: 0.6;
+  }
 `;
 
 export const TextOverlay = styled.div`

@@ -17,7 +17,7 @@ const content = [
   {
     id: 1,
     title: "VOICE OF THE STREET",
-    body: "Generate meaningful discussions with your audience and build a strong, loyal community. Think of the insightful conversations you miss out on with a feedback form.",
+    body: " Discover the unique art of WHTY, offering an intimate look into their life, creative process, and the emotions that shape their work. Explore their personal universe and its impact on modern culture.",
     image: Image1,
     hoverImage: ImageHover1,
     parallaxImage: ImageParallax1,
@@ -29,7 +29,7 @@ const content = [
   {
     id: 2,
     title: "STREET ALIENS",
-    body: "You wouldn't paginate a conversation in real life, so why do it online? Our threads have just-in-time loading for a more natural flow.. Think of the insightful conversations you miss out on with a feedback form.",
+    body: "Immerse yourself in the fascinating world of Street Aliens, where undiscovered life forms roam the streets. Witness alien creatures in an urban setting filled with mystery and wonder.",
     image: Image2,
     hoverImage: ImageHover2,
     parallaxImage: ImageParallax2,
@@ -40,8 +40,8 @@ const content = [
   },
   {
     id: 3,
-    title: "WHITEDEMON",
-    body: "It takes no time at all to integrate Huddle with your app's authentication solution. This means, once signed in to your app, your users can start chatting immediately.",
+    title: "WHAITY LAB",
+    body: "Explore the latest trends in accessories and fashion at Whaity Lab. Discover how WHTY is redefining style with cutting-edge designs, blending art and avant-garde fashion.",
     image: Image3,
     hoverImage: ImageHover3,
     parallaxImage: ImageParallax3,

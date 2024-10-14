@@ -10,7 +10,7 @@ import {
 export const StickyImage = ({ image }: { image: string }) => {
   return (
     <FixedImageLeft>
-      <Image src={image} alt="Gotas de agua" />
+      <Image src={image} />
     </FixedImageLeft>
   );
 };
@@ -28,7 +28,7 @@ export const StickyImageCard = ({
     </FixedImageLeft>
   ) : (
     <FixedImageRight>
-      <ImageCard src={image} alt="Gotas de agua" />
+      <ImageCard src={image} />
     </FixedImageRight>
   );
 };
@@ -36,7 +36,7 @@ export const StickyImageCard = ({
 export const StickyImageCardCenter = ({ image }: { image: string }) => {
   return (
     <FixedImageCenter>
-      <ImagePreLoader src={image} alt="Gotas de agua" />
+      <ImagePreLoader src={image} />
     </FixedImageCenter>
   );
 };

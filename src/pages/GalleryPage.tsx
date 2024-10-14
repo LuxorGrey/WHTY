@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import DarkBackground from "../assets/image/backgrounds/preLoaderBackground.png";
-import LightBackground from "../assets/image/backgrounds/preLoaderBackground1.png";
+import DarkBackground from "../assets/image/Photos/photo17.jpg";
+import LightBackground from "../assets/image/Photos/photo22.jpg";
 import Drop from "../assets/image/decorations/drop.png";
 import AvatarLight from "../assets/image/Photos/photo11.jpg";
-import AvatarDark from "../assets/image/Photos/photo13.jpg";
-import Card1 from "../assets/image/Titles/title1.png";
+import AvatarDark from "../assets/image/Photos/photo4.jpg";
+import Card1 from "../assets/image/Titles/title1.jpg";
 import Card2 from "../assets/image/Titles/title2.jpg";
 import Card3 from "../assets/image/Titles/title3.jpg";
 import Card4 from "../assets/image/Titles/title4.jpg";
@@ -23,7 +23,7 @@ const GalleryPage = () => {
       <HeaderWithParallax
         titleHeader={"MY GALLERY"}
         descriptionHeader={
-          "My main goal is to find the most efficient solution to meet the presented needs and requirements. Throughout my journey"
+          "Explore my gallery, featuring a wide range of content from music, including covers, artwork, videos, and photography, to personal projects. Discover a creative journey that blends artistic expression with personal stories and passions."
         }
         parallaxImage={Drop}
         lightBackground={LightBackground}

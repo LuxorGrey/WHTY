@@ -12,7 +12,7 @@ export const GalleryWrapper = styled.div`
 // Contenedor del header con la imagen de fondo y el título
 export const GalleryHeader = styled.div<{ backgroundUrl: string }>`
   width: 100%;
-  height: 400px;
+  height: 250px;
   position: relative;
   display: flex;
   justify-content: center;

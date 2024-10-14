@@ -30,36 +30,38 @@ const BioPage = () => {
   const { isDark } = useTheme();
   return (
     <Section id="about-me">
+      <Parallax speed={-20} scale={[0.65, 1.5]} translateY={["200px", "0px"]}>
+        <ParallaxImageDomain
+          src={Drop}
+          style={{ opacity: 0.1, filter: " blur(2px)" }}
+        />
+      </Parallax>
       <HeaderContainer>
         <ProfileImage src={isDark ? bioAvatar : galleryAvatarLight} />
         <Content>
           <Title>WHAITY STUDIOS™</Title>
           <Subtitle>
-            WHAITY STUDIOS™ es la marca de arte, moda y decoración. Fundada por
-            el artista y diseñador WHAITY.
+            WHAITY STUDIOS™ is the art, fashion and decoration brand. Founded by
+            artist and designer WHAITY.
           </Subtitle>
         </Content>
       </HeaderContainer>
-      <Parallax speed={-20} scale={[0.65, 1.5]} translateY={["200px", "0px"]}>
-        <ParallaxImageDomain
-          src={Drop}
-          style={{ opacity: 0.2, filter: " blur(2px)" }}
-        />
-      </Parallax>
+
       <Container>
         <ImageContainer src={isDark ? bioAvatarDark : bioAvatarLight} />
         <BoxContainer>
-          <WLogo2 width={550} margin={0} />
+          <div style={{ alignSelf: "center" }}>
+            <WLogo2 width={250} margin={0} />
+          </div>
           <ParagraphBio>
-            WHAITY es una marca creativa con una amplia experiencia en el mundo
-            del arte digital. Especializada en áreas como el diseño
-            tridimensional (3D), la fotomanipulación, la producción de videos
-            musicales y la creación de portadas de discos, WHAITY se destaca por
-            su capacidad para fusionar la tecnología y la creatividad para
-            ofrecer resultados impactantes y originales. La pasión por el arte y
-            el compromiso con la excelencia son evidentes en cada proyecto que
-            realizamos, convirtiéndola en una referencia en la industria del
-            arte digital.
+            WHAITY is a creative brand with extensive experience in the world of
+            digital art. Specialized in areas such as design three-dimensional
+            (3D), photomanipulation, video production musicals and the creation
+            of album covers, WHAITY stands out for its ability to merge
+            technology and creativity to offer impressive and original results.
+            The passion for art and commitment to excellence are evident in
+            every project we we carry out, making it a reference in the industry
+            of digital art
           </ParagraphBio>
           <Button onClick={() => navigate("/gallery")}>SHOW GALLERY</Button>
           <SocialIcons />
