@@ -1,19 +1,6 @@
 import styled from "styled-components";
 
-export const Section = styled.section`
-  margin-bottom: 115px;
-  overflow: hidden;
-
-  @media (min-width: 768px) {
-    margin-bottom: 96px;
-  }
-
-  @media (min-width: 1440px) {
-    margin-bottom: 150px;
-  }
-`;
-
-export const Container = styled.div`
+export const ContainerBio = styled.div`
   margin: 2rem;
   padding: 2rem;
   align-items: center;

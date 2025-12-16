@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { blinkCaret, typing } from "./animations/animations";
 
 interface StyledCardProps {
-  layout?: string ;
+  layout?: string;
   children?: ReactNode;
   borderColor?: string;
   onMouseEnter?: (event: MouseEvent<HTMLDivElement>) => void;
@@ -31,8 +31,8 @@ export const ImageCardLogo = styled.div`
   }
 
   &:not(:hover) {
-    transform: scale(0.9); 
-    transition: transform 0.9s; 
+    transform: scale(0.9);
+    transition: transform 0.9s;
   }
 `;
 
@@ -71,7 +71,7 @@ export const StyledCard: React.FC<StyledCardProps> = styled.div`
   margin: 100px 0;
   text-align-last: center;
   border-bottom: solid ${(props) => props?.borderColor} 2px;
-  margin-bottom:1em;
+  margin-bottom: 1em;
 
   img {
     width: 55%;
@@ -98,15 +98,14 @@ export const StyledCard: React.FC<StyledCardProps> = styled.div`
 
 export const ImageCard = styled.img`
   max-width: 35vw;
+  overflow: normal;
   &:hover {
-    opacity: 0.95;
     transform: scale(0.99);
     transition: opacity 0.3s, transform 0.3s;
   }
 
   &:not(:hover) {
     transition: opacity 0.3s, transform 0.3s;
-    opacity: 1;
     transform: scale(1);
   }
 `;

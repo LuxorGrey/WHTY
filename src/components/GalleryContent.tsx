@@ -84,8 +84,7 @@ const GalleryContent: React.FC<GalleryContentProps> = ({
   return (
     <PageContainer>
       <GalleryWrapper>
-        {/* Header con título y fondo */}
-        <GalleryHeader backgroundUrl={backgroundUrl}>
+        <GalleryHeader $backgroundUrl={backgroundUrl}>
           <GalleryTitle>{title}</GalleryTitle>
         </GalleryHeader>
 

@@ -62,13 +62,15 @@ export const ContainerHeader = styled.div`
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;
-  overflow: hidden;
+  /* overflow: hidden; Removed to allow menu to show */
   background-color: ${({ theme }) => theme.colors.header};
   border-radius: 1rem;
   margin-top: 15px; /* Reduced top margin */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added drop shadow */
   box-sizing: border-box;
 `;
+
+// ... existing Nav ...
 
 // Estilos para el contenedor del nav (barra de navegación)
 export const Nav = styled.nav`
@@ -108,13 +110,17 @@ export const MobileNavList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) =>
+    theme.colors.header}; /* Use header color */
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
   padding: 1rem;
   z-index: 9;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   a {
     text-align: center;

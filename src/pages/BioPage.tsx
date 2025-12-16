@@ -10,7 +10,7 @@ import SocialIcons from "../components/SocialIcons.tsx";
 import { useTheme } from "../context/themeContext.jsx";
 import {
   BoxContainer,
-  Container,
+  ContainerBio,
   ImageContainer,
   ParagraphBio,
 } from "../styled-components/Bio.styled.tsx";
@@ -34,7 +34,7 @@ const BioPage = () => {
         darkBackground={bioAvatar}
       />
 
-      <Container>
+      <ContainerBio>
         <ImageContainer src={isDark ? bioAvatarDark : bioAvatarLight} />
         <BoxContainer>
           <div style={{ alignSelf: "center" }}>
@@ -53,7 +53,7 @@ const BioPage = () => {
           <Button onClick={() => navigate("/gallery")}>SHOW GALLERY</Button>
           <SocialIcons />
         </BoxContainer>
-      </Container>
+      </ContainerBio>
     </PageContainer>
   );
 };

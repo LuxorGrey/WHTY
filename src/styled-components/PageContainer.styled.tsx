@@ -7,7 +7,7 @@ export const PageContainer = styled.section`
   margin-right: auto;
   padding: 0 20px;
   position: relative;
-  overflow: hidden;
+
   margin-bottom: 115px;
 
   @media (min-width: 768px) {

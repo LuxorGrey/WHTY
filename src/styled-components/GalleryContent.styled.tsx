@@ -10,7 +10,7 @@ export const GalleryWrapper = styled.div`
 `;
 
 // Contenedor del header con la imagen de fondo y el título
-export const GalleryHeader = styled.div<{ backgroundUrl: string }>`
+export const GalleryHeader = styled.div<{ $backgroundUrl: string }>`
   width: 100%;
   height: 250px;
   position: relative;
@@ -24,7 +24,7 @@ export const GalleryHeader = styled.div<{ backgroundUrl: string }>`
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(${(props) => props.backgroundUrl});
+    background-image: url(${(props) => props.$backgroundUrl});
     background-size: cover;
     background-position: center;
     filter: blur(5px); /* Añadido blur solo al fondo */
@@ -70,13 +70,17 @@ export const GalleryTitle = styled.h1`
 // Contenedor de las imágenes en grid
 export const GalleryGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   margin: 20px auto;
   width: 100%;
   max-width: 1200px;
   padding: 0 20px;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 // Imagen en la galería

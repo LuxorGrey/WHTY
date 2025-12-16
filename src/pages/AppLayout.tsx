@@ -12,7 +12,11 @@ const AppLayout = ({ children }: AppLayoutProps) => {
   return (
     <ParallaxProvider>
       <div
-        style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
+        }}
       >
         <PreLoader />
         <Header />

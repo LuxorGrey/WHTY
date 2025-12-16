@@ -4,7 +4,6 @@ export const Container = styled.div`
   max-width: 100%;
   padding: 0;
   margin: 0 auto;
-  overflow: hidden;
 `;
 export const ContainerWrap = styled.div`
   display: flex;
@@ -18,10 +17,10 @@ export const ContainerWrapCards = styled.div`
   gap: 10px;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 
   @media (max-width: 768px) {
     display: none; /* Oculta en pantallas móviles */
+    overflow: hidden;
   }
 `;
 

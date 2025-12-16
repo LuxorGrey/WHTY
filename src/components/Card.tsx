@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Button from "../styled-components/Button.styled";
 import {
   ContainerCard,
@@ -36,6 +36,34 @@ export default function Card({ item }: CardProps) {
     urlButton,
   } = item;
   const [isHover, setIsHover] = useState(false);
+  const [isRandomActive, setIsRandomActive] = useState(false);
+
+  // Efecto para activar la imagen de hover aleatoriamente entre 1 y 7 segundos
+  useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout>;
+    const triggerRandomHover = () => {
+      const randomTime = Math.random() * (7000 - 1000) + 1000; // 1 to 7 seconds
+
+      timeoutId = setTimeout(() => {
+        // Solo activar si no se está haciendo hover manualmente
+        if (!isHover) {
+          setIsRandomActive(true);
+          // Mantener la imagen activa por 0.5 segundos
+          setTimeout(() => {
+            setIsRandomActive(false);
+            triggerRandomHover(); // Programar el siguiente
+          }, 500);
+        } else {
+          // Si está en hover, esperar y probar de nuevo
+          triggerRandomHover();
+        }
+      }, randomTime);
+    };
+
+    triggerRandomHover();
+
+    return () => clearTimeout(timeoutId);
+  }, [isHover]);
 
   return (
     <StyledCard
@@ -57,10 +85,10 @@ export default function Card({ item }: CardProps) {
       </Button>
 
       <ImageCard
-        src={isHover ? hoverImage : image}
+        src={isHover || isRandomActive ? hoverImage : image}
         style={{
           transition: "opacity 0.3s",
-          opacity: isHover ? 0.85 : 1, // Cambia la opacidad al hacer hover
+          opacity: isHover || isRandomActive ? 0.85 : 1, // Cambia la opacidad al hacer hover o random
         }}
       />
     </StyledCard>

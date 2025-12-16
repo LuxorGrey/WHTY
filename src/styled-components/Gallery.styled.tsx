@@ -36,6 +36,11 @@ export const HeaderContainer: React.FC<HeaderContainerProps> = styled.header`
   padding: 10px;
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.card};
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 export const ProfileImage = styled.img`
@@ -50,6 +55,12 @@ export const Content = styled.div`
   width: 350px;
   margin-left: 10px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -72,6 +83,17 @@ export const ContainerGallery = styled.div`
   padding: 20px;
   padding-top: 4em;
   padding-bottom: 4em;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
 `;
 
 export const CardGallery = styled.div`
@@ -137,6 +159,10 @@ export const HeaderGallery = styled.header`
   position: relative;
   overflow: hidden;
 
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+
   &:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
@@ -152,6 +178,10 @@ export const TitleHeaderGallery = styled.h1`
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 // Descripción de la cabecera
@@ -171,6 +201,11 @@ export const ImageHeaderGallery = styled.img`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-top: 20px;
+
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 200px;
+  }
 
   &:hover {
     transform: scale(1.1);

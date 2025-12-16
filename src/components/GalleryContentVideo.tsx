@@ -7,11 +7,12 @@ import {
   ModalWrapper,
   NextButton,
   PrevButton,
+  GalleryGrid,
 } from "../styled-components/GalleryContent.styled";
 import {
-  GalleryGridVideo,
   ModalVideoIframe,
   VideoWrapper,
+  VideoOverlay,
 } from "../styled-components/GalleryContentVideo.styled";
 import { useNavigate } from "react-router-dom";
 import Button from "../styled-components/Button.styled";
@@ -97,7 +98,10 @@ const GalleryContentVideo: React.FC<GalleryContentVideoProps> = ({
   return (
     <PageContainer>
       <GalleryWrapper>
-        <GalleryHeader backgroundUrl={backgroundUrl}>
+        <GalleryHeader
+          $backgroundUrl={backgroundUrl}
+          style={{ minWidth: "60vw" }}
+        >
           <GalleryTitle>{title}</GalleryTitle>
         </GalleryHeader>
 
@@ -113,13 +117,14 @@ const GalleryContentVideo: React.FC<GalleryContentVideoProps> = ({
         </div>
 
         {/* Grid de videos */}
-        <GalleryGridVideo>
+        <GalleryGrid style={{ gridTemplateColumns: "1fr" }}>
           {videos.map((video, index) => (
             <VideoWrapper key={index} onClick={() => openModal(index)}>
+              <VideoOverlay />
               {/* Usamos iframe para mostrar videos de YouTube */}
               <iframe
                 width="100%"
-                height="720"
+                height="100%"
                 src={getYouTubeEmbedUrl(video)}
                 title={`Video ${index + 1}`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -127,7 +132,7 @@ const GalleryContentVideo: React.FC<GalleryContentVideoProps> = ({
               />
             </VideoWrapper>
           ))}
-        </GalleryGridVideo>
+        </GalleryGrid>
 
         {/* Modal de video ampliado */}
         {selectedVideoIndex !== null && (
