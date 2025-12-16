@@ -13,13 +13,13 @@ import Card6 from "../assets/image/Titles/title6.jpg";
 import ContainerGalleryComponent from "../components/ContainerGallery.tsx";
 import HeaderWithParallax from "../components/HeaderWithParallax.tsx";
 import { ContainerGallery } from "../styled-components/Gallery.styled.tsx";
-import { BackgroundContainer } from "../styled-components/LandingImage.styled.tsx";
+import { PageContainer } from "../styled-components/PageContainer.styled.tsx";
 
 const GalleryPage = () => {
   const navigate = useNavigate();
 
   return (
-    <BackgroundContainer>
+    <PageContainer>
       <HeaderWithParallax
         titleHeader={"MY GALLERY"}
         descriptionHeader={
@@ -35,44 +35,44 @@ const GalleryPage = () => {
       <ContainerGallery>
         <ContainerGalleryComponent
           image={Card3}
-          handleClick={() => navigate("/photos")}
+          handleClick={() => navigate("/gallery/photos")}
           title={"Photos"}
           description={"A collection of my best photography work."}
         />
         <ContainerGalleryComponent
           image={Card5}
-          handleClick={() => navigate("/design")}
+          handleClick={() => navigate("/gallery/design")}
           title={"Design"}
           description={"Various design projects, from graphic to web design."}
         />
         <ContainerGalleryComponent
           image={Card1}
-          handleClick={() => navigate("/covers")}
+          handleClick={() => navigate("/gallery/covers")}
           title={"Cover CD"}
           description={"CD covers and album artwork I've created."}
         />
         <ContainerGalleryComponent
           image={Card4}
-          handleClick={() => navigate("/logos")}
+          handleClick={() => navigate("/gallery/logos")}
           title={"Logotypes"}
           description={"A showcase of logo designs for various brands."}
         />
         <ContainerGalleryComponent
           image={Card6}
-          handleClick={() => navigate("/videoclips")}
+          handleClick={() => navigate("/gallery/videoclips")}
           title={"Videoclips"}
           description={"Music and promotional videoclips I've produced."}
         />
         <ContainerGalleryComponent
           image={Card2}
-          handleClick={() => navigate("/3d")}
+          handleClick={() => navigate("/gallery/3d")}
           title={"3D Creations"}
           description={
             "A selection of 3D models, covers, and videos I've created."
           }
         />
       </ContainerGallery>
-    </BackgroundContainer>
+    </PageContainer>
   );
 };
 

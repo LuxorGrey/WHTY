@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Button from "../styled-components/Button.styled";
 import {
   GalleryWrapper,
   GalleryHeader,
@@ -11,6 +13,7 @@ import {
   PrevButton,
   NextButton,
 } from "../styled-components/GalleryContent.styled";
+import { PageContainer } from "../styled-components/PageContainer.styled";
 
 interface GalleryContentProps {
   title: string;
@@ -23,6 +26,7 @@ const GalleryContent: React.FC<GalleryContentProps> = ({
   backgroundUrl,
   images,
 }) => {
+  const navigate = useNavigate();
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null
   );
@@ -78,34 +82,50 @@ const GalleryContent: React.FC<GalleryContentProps> = ({
   }, [selectedImageIndex]);
 
   return (
-    <GalleryWrapper>
-      {/* Header con título y fondo */}
-      <GalleryHeader backgroundUrl={backgroundUrl}>
-        <GalleryTitle>{title}</GalleryTitle>
-      </GalleryHeader>
+    <PageContainer>
+      <GalleryWrapper>
+        {/* Header con título y fondo */}
+        <GalleryHeader backgroundUrl={backgroundUrl}>
+          <GalleryTitle>{title}</GalleryTitle>
+        </GalleryHeader>
 
-      {/* Grid de imágenes */}
-      <GalleryGrid>
-        {images.map((image, index) => (
-          <GalleryImage
-            key={index}
-            src={image}
-            alt={`Image ${index + 1}`}
-            onClick={() => openModal(index)}
-          />
-        ))}
-      </GalleryGrid>
+        <div
+          style={{
+            padding: "20px",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Button onClick={() => navigate("/gallery")}>BACK TO GALLERY</Button>
+        </div>
 
-      {/* Modal de imagen ampliada */}
-      {selectedImageIndex !== null && (
-        <ModalWrapper isOpen={selectedImageIndex !== null} onClick={closeModal}>
-          <PrevButton onClick={prevImage}>&#10094;</PrevButton>
-          <NextButton onClick={nextImage}>&#10095;</NextButton>
-          <ModalImage src={images[selectedImageIndex]} alt="Selected Image" />
-          <CloseButton onClick={closeModal}>&times;</CloseButton>
-        </ModalWrapper>
-      )}
-    </GalleryWrapper>
+        {/* Grid de imágenes */}
+        <GalleryGrid>
+          {images.map((image, index) => (
+            <GalleryImage
+              key={index}
+              src={image}
+              alt={`Image ${index + 1}`}
+              onClick={() => openModal(index)}
+            />
+          ))}
+        </GalleryGrid>
+
+        {/* Modal de imagen ampliada */}
+        {selectedImageIndex !== null && (
+          <ModalWrapper
+            isOpen={selectedImageIndex !== null}
+            onClick={closeModal}
+          >
+            <PrevButton onClick={prevImage}>&#10094;</PrevButton>
+            <NextButton onClick={nextImage}>&#10095;</NextButton>
+            <ModalImage src={images[selectedImageIndex]} alt="Selected Image" />
+            <CloseButton onClick={closeModal}>&times;</CloseButton>
+          </ModalWrapper>
+        )}
+      </GalleryWrapper>
+    </PageContainer>
   );
 };
 

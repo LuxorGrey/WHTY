@@ -13,6 +13,9 @@ import {
   ModalVideoIframe,
   VideoWrapper,
 } from "../styled-components/GalleryContentVideo.styled";
+import { useNavigate } from "react-router-dom";
+import Button from "../styled-components/Button.styled";
+import { PageContainer } from "../styled-components/PageContainer.styled";
 
 interface GalleryContentVideoProps {
   title: string;
@@ -25,6 +28,7 @@ const GalleryContentVideo: React.FC<GalleryContentVideoProps> = ({
   backgroundUrl,
   videos,
 }) => {
+  const navigate = useNavigate();
   const [selectedVideoIndex, setSelectedVideoIndex] = useState<number | null>(
     null
   );
@@ -91,44 +95,59 @@ const GalleryContentVideo: React.FC<GalleryContentVideoProps> = ({
   };
 
   return (
-    <GalleryWrapper>
-      {/* Header con título y fondo */}
-      <GalleryHeader backgroundUrl={backgroundUrl}>
-        <GalleryTitle>{title}</GalleryTitle>
-      </GalleryHeader>
+    <PageContainer>
+      <GalleryWrapper>
+        <GalleryHeader backgroundUrl={backgroundUrl}>
+          <GalleryTitle>{title}</GalleryTitle>
+        </GalleryHeader>
 
-      {/* Grid de videos */}
-      <GalleryGridVideo>
-        {videos.map((video, index) => (
-          <VideoWrapper key={index} onClick={() => openModal(index)}>
-            {/* Usamos iframe para mostrar videos de YouTube */}
-            <iframe
-              width="100%"
-              height="720"
-              src={getYouTubeEmbedUrl(video)}
-              title={`Video ${index + 1}`}
+        <div
+          style={{
+            padding: "20px",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Button onClick={() => navigate("/gallery")}>BACK TO GALLERY</Button>
+        </div>
+
+        {/* Grid de videos */}
+        <GalleryGridVideo>
+          {videos.map((video, index) => (
+            <VideoWrapper key={index} onClick={() => openModal(index)}>
+              {/* Usamos iframe para mostrar videos de YouTube */}
+              <iframe
+                width="100%"
+                height="720"
+                src={getYouTubeEmbedUrl(video)}
+                title={`Video ${index + 1}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </VideoWrapper>
+          ))}
+        </GalleryGridVideo>
+
+        {/* Modal de video ampliado */}
+        {selectedVideoIndex !== null && (
+          <ModalWrapper
+            isOpen={selectedVideoIndex !== null}
+            onClick={closeModal}
+          >
+            <PrevButton onClick={prevVideo}>&#10094;</PrevButton>
+            <NextButton onClick={nextVideo}>&#10095;</NextButton>
+            <ModalVideoIframe
+              src={getYouTubeEmbedUrl(videos[selectedVideoIndex])}
+              title={`Video ${selectedVideoIndex + 1}`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
-          </VideoWrapper>
-        ))}
-      </GalleryGridVideo>
-
-      {/* Modal de video ampliado */}
-      {selectedVideoIndex !== null && (
-        <ModalWrapper isOpen={selectedVideoIndex !== null} onClick={closeModal}>
-          <PrevButton onClick={prevVideo}>&#10094;</PrevButton>
-          <NextButton onClick={nextVideo}>&#10095;</NextButton>
-          <ModalVideoIframe
-            src={getYouTubeEmbedUrl(videos[selectedVideoIndex])}
-            title={`Video ${selectedVideoIndex + 1}`}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <CloseButton onClick={closeModal}>&times;</CloseButton>
-        </ModalWrapper>
-      )}
-    </GalleryWrapper>
+            <CloseButton onClick={closeModal}>&times;</CloseButton>
+          </ModalWrapper>
+        )}
+      </GalleryWrapper>
+    </PageContainer>
   );
 };
 

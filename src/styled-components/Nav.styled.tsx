@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { trackingInExpand } from "./animations/animations";
 
 export const NavList = styled.ul`
   list-style: none;
@@ -25,15 +24,20 @@ export const NavLink = styled.a`
     color: ${({ theme }) => theme.colors.icons};
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
-  animation: ${trackingInExpand} 1s ease forwards;
+  /* Removed animation to prevent flicker on active state change */
 `;
 
-export const NavLinkLocal = styled.div`
+export const NavLinkLocal = styled.div<{ $active?: boolean }>`
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme, $active }) =>
+    $active ? theme.colors.icons : theme.colors.text};
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s, text-shadow 0.3s;
   font-size: 0.9rem;
+
+  text-shadow: ${({ $active }) =>
+    $active ? "0 0 10px rgba(255, 255, 255, 0.6)" : "none"};
+
   &:hover {
     color: ${({ theme }) => theme.colors.icons};
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -47,18 +51,23 @@ export const NavLinkLocal = styled.div`
 // Contenedor del header principal
 export const StyledHeader = styled.header`
   width: 100%;
-  padding: 1rem;
-  position: relative;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const ContainerHeader = styled.div`
-  max-width: 100%;
-  padding: 0;
+  width: 100%;
+  padding: 0 20px;
   margin: 0 auto;
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.header};
   border-radius: 1rem;
+  margin-top: 15px; /* Reduced top margin */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added drop shadow */
+  box-sizing: border-box;
 `;
 
 // Estilos para el contenedor del nav (barra de navegación)
@@ -66,6 +75,11 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1em;
+
+  @media (max-width: 768px) {
+    padding: 0 1em; /* Reduce padding on mobile */
+  }
 
   .desktop-menu {
     display: flex;

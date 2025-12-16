@@ -53,7 +53,7 @@ export const HeaderWithParallax = ({
             <TextHeader>{titleHeader?.toLocaleUpperCase()}</TextHeader>
             <Text>{descriptionHeader}</Text>
             {buttonHeader && (
-              <Button onClick={buttonOnClick} animated={true}>
+              <Button onClick={buttonOnClick} $animated={true}>
                 {buttonHeader}
               </Button>
             )}

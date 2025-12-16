@@ -1,6 +1,6 @@
-import GalleryContentVideo from "../components/GalleryContentVideo";
+import GalleryContentVideo from "../../components/GalleryContentVideo";
 
-import background from "../assets/image/Headers/header2.jpg";
+import background from "../../assets/image/Headers/header2.jpg";
 
 const imagesLogo = [
   "https://www.youtube.com/watch?v=pGYNpZ9DMN0",

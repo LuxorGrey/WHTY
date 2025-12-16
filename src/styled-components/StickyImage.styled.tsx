@@ -30,7 +30,6 @@ export const FixedImageRight = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 100%;
   filter: blur(2px);
   mask: linear-gradient(to bottom, transparent 0%, transparent 30%, black 100%);
   -webkit-mask: linear-gradient(

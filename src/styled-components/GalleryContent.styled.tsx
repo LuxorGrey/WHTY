@@ -5,7 +5,7 @@ export const GalleryWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px;
+  padding: 0;
   width: 100%;
 `;
 
@@ -70,10 +70,13 @@ export const GalleryTitle = styled.h1`
 // Contenedor de las imágenes en grid
 export const GalleryGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  margin-top: 20px;
+  margin: 20px auto;
   width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  box-sizing: border-box;
 `;
 
 // Imagen en la galería

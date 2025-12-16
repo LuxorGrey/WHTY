@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa"; // Importar iconos de menú
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { WLogo } from "../assets/image/logos/W_LOGO";
 import { WLogo2 } from "../assets/image/logos/W_LOGO2";
 import { useTheme } from "../context/themeContext";
@@ -20,6 +20,7 @@ export default function Header() {
   const [isHover, setIsHover] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para el menú móvil
   const navigate = useNavigate();
+  const location = useLocation();
   const { isDark, toggleTheme } = useTheme();
 
   const handleMenuToggle = () => {
@@ -44,13 +45,26 @@ export default function Header() {
           </MobileMenuIcon>
           {/* Menú de navegación para pantallas grandes */}
           <NavList className="desktop-menu">
-            <NavLinkLocal onClick={() => navigate("/")}>HOME</NavLinkLocal>
+            <NavLinkLocal
+              $active={location.pathname === "/"}
+              onClick={() => navigate("/")}
+            >
+              HOME
+            </NavLinkLocal>
             <SeparatorVertical />
-            <NavLinkLocal onClick={() => navigate("gallery")}>
+            <NavLinkLocal
+              $active={location.pathname.startsWith("/gallery")}
+              onClick={() => navigate("gallery")}
+            >
               GALLERY
             </NavLinkLocal>
             <SeparatorVertical />
-            <NavLinkLocal onClick={() => navigate("bio")}>BIO</NavLinkLocal>
+            <NavLinkLocal
+              $active={location.pathname === "/bio"}
+              onClick={() => navigate("bio")}
+            >
+              BIO
+            </NavLinkLocal>
           </NavList>
 
           <Switch toggleTheme={toggleTheme} isDark={isDark} />

@@ -11,11 +11,11 @@ import ContainerImagesHome from "../components/ContainerImagesHome";
 import HeaderWithParallax from "../components/HeaderWithParallax.tsx";
 import contentHome from "../mock/contentHome.tsx";
 import { HeaderBackground } from "../styled-components/Gallery.styled.tsx";
-
+import { PageContainer } from "../styled-components/PageContainer.styled.tsx";
 const Homepage = () => {
   const navigate = useNavigate();
   return (
-    <>
+    <PageContainer>
       <HeaderWithParallax
         buttonOnClick={() => navigate("bio")}
         buttonHeader={"CONTACT US"}
@@ -33,7 +33,7 @@ const Homepage = () => {
       <Cards3D />
       <StickyImageBackground src={Drop} />
       <ContainerImagesHome content={contentHome} />
-    </>
+    </PageContainer>
   );
 };
 

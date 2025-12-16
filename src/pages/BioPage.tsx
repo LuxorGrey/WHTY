@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { Parallax } from "react-scroll-parallax";
 import bioAvatar from "../assets/image/avatars/bioAvatar.png";
 import galleryAvatarLight from "../assets/image/avatars/lightAvatarGallery.png";
 import bioAvatarDark from "../assets/image/backgrounds/bioAvatarDark.png";
 import bioAvatarLight from "../assets/image/backgrounds/bioAvatarLight.png";
 import Drop from "../assets/image/decorations/drop.png";
 import { WLogo2 } from "../assets/image/logos/W_LOGO2";
+import HeaderWithParallax from "../components/HeaderWithParallax.tsx";
 import SocialIcons from "../components/SocialIcons.tsx";
 import { useTheme } from "../context/themeContext.jsx";
 import {
@@ -13,39 +13,26 @@ import {
   Container,
   ImageContainer,
   ParagraphBio,
-  Section,
 } from "../styled-components/Bio.styled.tsx";
 import Button from "../styled-components/Button.styled.tsx";
-import {
-  Content,
-  HeaderContainer,
-  ProfileImage,
-  Subtitle,
-  Title,
-} from "../styled-components/Gallery.styled.tsx";
-import { ParallaxImageDomain } from "../styled-components/LandingImage.styled.tsx";
+import { PageContainer } from "../styled-components/PageContainer.styled.tsx";
 
 const BioPage = () => {
   const navigate = useNavigate();
   const { isDark } = useTheme();
   return (
-    <Section id="about-me">
-      <Parallax speed={-20} scale={[0.65, 1.5]} translateY={["200px", "0px"]}>
-        <ParallaxImageDomain
-          src={Drop}
-          style={{ opacity: 0.1, filter: " blur(2px)" }}
-        />
-      </Parallax>
-      <HeaderContainer>
-        <ProfileImage src={isDark ? bioAvatar : galleryAvatarLight} />
-        <Content>
-          <Title>WHAITY STUDIOS™</Title>
-          <Subtitle>
-            WHAITY STUDIOS™ is the art, fashion and decoration brand. Founded by
-            artist and designer WHAITY.
-          </Subtitle>
-        </Content>
-      </HeaderContainer>
+    <PageContainer id="about-me">
+      <HeaderWithParallax
+        titleHeader={"WHAITY STUDIOS™"}
+        descriptionHeader={
+          "WHAITY STUDIOS™ is the art, fashion and decoration brand. Founded by artist and designer WHAITY."
+        }
+        parallaxImage={Drop}
+        lightBackground={galleryAvatarLight}
+        lightAvatar={galleryAvatarLight}
+        darkAvatar={bioAvatar}
+        darkBackground={bioAvatar}
+      />
 
       <Container>
         <ImageContainer src={isDark ? bioAvatarDark : bioAvatarLight} />
@@ -67,7 +54,7 @@ const BioPage = () => {
           <SocialIcons />
         </BoxContainer>
       </Container>
-    </Section>
+    </PageContainer>
   );
 };
 

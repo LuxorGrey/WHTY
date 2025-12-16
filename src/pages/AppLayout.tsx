@@ -11,10 +11,24 @@ interface AppLayoutProps {
 const AppLayout = ({ children }: AppLayoutProps) => {
   return (
     <ParallaxProvider>
-      <PreLoader />
-      <Header />
-      {children}
-      <Footer />
+      <div
+        style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+      >
+        <PreLoader />
+        <Header />
+        <div
+          style={{
+            flex: 1,
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            marginTop: "20px" /* Added top spacing */,
+          }}
+        >
+          {children}
+        </div>
+        <Footer />
+      </div>
     </ParallaxProvider>
   );
 };

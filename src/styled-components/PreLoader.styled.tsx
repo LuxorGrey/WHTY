@@ -20,7 +20,7 @@ export const PreLoaderContainer = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 55;
+  z-index: 2000;
   overflow: hidden !important;
 `;
 
