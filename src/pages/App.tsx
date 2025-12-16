@@ -1,10 +1,12 @@
 import { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ParallaxProvider } from "react-scroll-parallax";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { ThemeProvider, useTheme } from "../context/themeContext";
 import GlobalStyles from "../styled-components/Global";
 import { PageContainer } from "../styled-components/PageContainer.styled";
 import AppLayout from "./AppLayout";
+import PreLoader from "./PreLoader";
 import ScrollToTop from "../components/ScrollToTop";
 
 // Lazy load de los componentes
@@ -37,30 +39,35 @@ const ThemedApp = () => {
   return (
     <StyledThemeProvider theme={currentTheme}>
       <GlobalStyles />
-      <BrowserRouter>
-        <ScrollToTop />
-        <AppLayout>
-          <Suspense fallback={<PageContainer style={{ minHeight: "100vh" }} />}>
-            <Routes>
-              {/*Basics */}
-              <Route path="/" element={<Homepage />} />
-              <Route path="/bio" element={<BioPage />} />
-              <Route path="/gallery" element={<GalleryPage />} />
+      <ParallaxProvider>
+        <PreLoader />
+        <BrowserRouter>
+          <ScrollToTop />
+          <AppLayout>
+            <Suspense
+              fallback={<PageContainer style={{ minHeight: "100vh" }} />}
+            >
+              <Routes>
+                {/*Basics */}
+                <Route path="/" element={<Homepage />} />
+                <Route path="/bio" element={<BioPage />} />
+                <Route path="/gallery" element={<GalleryPage />} />
 
-              {/*Gallery */}
-              <Route path="/gallery/3d" element={<GalleryPage3D />} />
-              <Route
-                path="/gallery/videoclips"
-                element={<GalleryPageVideoclip />}
-              />
-              <Route path="/gallery/design" element={<GalleryPageDesign />} />
-              <Route path="/gallery/logos" element={<GalleryPageLogo />} />
-              <Route path="/gallery/photos" element={<GalleryPagePhotos />} />
-              <Route path="/gallery/covers" element={<GalleryPageCover />} />
-            </Routes>
-          </Suspense>
-        </AppLayout>
-      </BrowserRouter>
+                {/*Gallery */}
+                <Route path="/gallery/3d" element={<GalleryPage3D />} />
+                <Route
+                  path="/gallery/videoclips"
+                  element={<GalleryPageVideoclip />}
+                />
+                <Route path="/gallery/design" element={<GalleryPageDesign />} />
+                <Route path="/gallery/logos" element={<GalleryPageLogo />} />
+                <Route path="/gallery/photos" element={<GalleryPagePhotos />} />
+                <Route path="/gallery/covers" element={<GalleryPageCover />} />
+              </Routes>
+            </Suspense>
+          </AppLayout>
+        </BrowserRouter>
+      </ParallaxProvider>
     </StyledThemeProvider>
   );
 };

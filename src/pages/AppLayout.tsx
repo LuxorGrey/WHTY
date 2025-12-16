@@ -1,8 +1,7 @@
 import { ReactNode } from "react";
-import { ParallaxProvider } from "react-scroll-parallax";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import PreLoader from "./PreLoader";
+import { LayoutWrapper, MainContent } from "../styled-components/Layout.styled";
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -10,30 +9,11 @@ interface AppLayoutProps {
 
 const AppLayout = ({ children }: AppLayoutProps) => {
   return (
-    <ParallaxProvider>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          minHeight: "100vh",
-        }}
-      >
-        <PreLoader />
-        <Header />
-        <div
-          style={{
-            flex: 1,
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            marginTop: "20px" /* Added top spacing */,
-          }}
-        >
-          {children}
-        </div>
-        <Footer />
-      </div>
-    </ParallaxProvider>
+    <LayoutWrapper>
+      <Header />
+      <MainContent>{children}</MainContent>
+      <Footer />
+    </LayoutWrapper>
   );
 };
 

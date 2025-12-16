@@ -51,6 +51,7 @@ export const NavLinkLocal = styled.div<{ $active?: boolean }>`
 // Contenedor del header principal
 export const StyledHeader = styled.header`
   width: 100%;
+  min-width: 70vw;
   padding: 0;
   position: sticky;
   top: 0;
